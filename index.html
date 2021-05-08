@@ -6,40 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="imagen"></div>
+<section class="fondo_negro"></section>
 
+    <div class="imagen"></div>
     <header>
         <div class="logo"><p class="logo__a">A</p></div>
 
-        <div class="header__menu">
+        <section class="header__menu">
+
+            <div class="searh-box">
+
+                <input class="search-box__input" type="text">
+    
+            </div>            
             <span class="header__menu--photo"></span>
+            
             <ul class="header__menu--submenu">
                 <li><a href="#">Cuenta</a></li>
-                <li><a href="#">Cerrar sección</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
 
             </ul>
-        </div>
+        </section>
+
+
+
     </header>
 
     <main>
 
-    <section class="hola">
+    <section class="presentation">
     
-        <div class="alejandro__text">
-        <p class="alejandro__text--a red">A</p><p>lejandro</p><p class="alejandro__text--tv">tv</p></div>
-    
+        <div class="presentation-text">
+        
+        <p class="alejandro--a">A</p><p>lejandro</p><p class="alejandro--tv">tv</p></div>
+    <p class="presentation-text__item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam architecto sit id officia rem veniam porro maiores cum, debitis minima voluptate molestiae autem quas qui voluptatem, pariatur beatae. Sint, adipisci!</p>
     </section>
     
-    <div class="chau">
-        <p>Lorem ipsum dolor sit, amet consectetur  adipisicing elit. Unde amet facere officiis  laboriosam asperiores nesciunt explicabo autem   reprehenderi</p>
-    </div>
+    <section class="carousel">
+    <div class="carousel__container">
+        <div class="container__item" id="star-wars">
+            
+            <div class="item__info">
+                
+            <p class="item__info--title">Star Wars</p>
+            <p class="item__info--info"></p>
+            </div>
+        </div>
+        <div class="container__item"></div>
+        <div class="container__item"></div>
+        <div class="container__item"></div>
+
+    </div>    
+        
+        
+    </section>
 
     </main>
-    
+    <script src="code.js"></script>
 </body>
 </html>

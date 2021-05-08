@@ -2,44 +2,59 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 html{
 
     font-size: 62.5%;
     color: whitesmoke;
+    overflow-x: hidden;
 
 }
 
 body{
 
+    overflow-x: hidden;
+
     font-size:clamp(1rem, 1.5vw, 2rem);
     background: rgb(10, 10, 10);
-
     overflow-x: hidden;
 
 }
 header{
+
     position: relative;
-    padding: 0 5vw;
+    z-index: 2;
+    padding: 1.5vw 5vw;
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 5vw;
     min-height: 100px;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    
 
 }
+
+
 main{
-
-
     display: grid;
     grid-row: repeat(5,1fr);
-grid-column: repeat(5,1fr);
-width: 100%;
-height: 100%;
+    grid-column: repeat(5,1fr);
+    width: 100%;
+    height: 100%;
 }
+
+.fondo_negro{
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(255,255,255,0) 100%);
+}
+
 .logo{
 
     width: 2vw;
@@ -47,28 +62,43 @@ height: 100%;
     min-height: 50px;
     min-width: 50px;
     color: red;
-    font-size:clamp(7rem, 15vw, 50rem);
+    font-size:clamp(7rem, 15vw, 25rem);
+}
+
+.header__menu{
+    align-items: center;
+
+    display: flex;
 }
 
 .header__menu--submenu{
-    position: absolute;
+    
+    position:absolute;
+    z-index: 1;
     text-decoration: none;
-
+    background-color: rgb(10, 10, 10);
+    top: 70px;
     color: whitesmoke;
     display: none;
     list-style: none;
-    width:clamp(7rem, 15vw, 10rem);
+    min-width:2vw;
     right:5vw; 
-    height: 10vh;
-    background-color:rgba(7, 7, 7, 0.904);
+    min-height: 5vh;
     border-radius: 10px;
-    
+    font-size:clamp(1.5rem, 2vw, 1.7rem);
+
+ 
+
 }
 .header__menu--submenu li a {
     color:whitesmoke;
     text-decoration: none;
+ 
 }
-.header__menu:hover ul/*, ul:hover*/{
+.header__menu--submenu li{
+    margin: 2.5vh 1.5vw;
+}
+.header__menu:hover ul, ul:hover,.header__menu:active ul, ul:active{
     text-align: right;
 
     display: block;
@@ -76,69 +106,168 @@ height: 100%;
     }
 .header__menu--photo{
     background-image: url(./user-icon/user-icon.png);
-    width: 5vh;
-    height: 5vh;
-    display: inline-block;
+    width: 3vw;
+    height: 3vw;
+    min-height: 30px;
+    min-width: 30px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;    
 }
+.searh-box{
+    display: flex;
 
+}
+.search-box__input{
+    font-family: sans-serif;
+    background:rgb(0, 0, 0,0.7);
+    border: 0.2vw solid rgba(97, 97, 97, 0.198);
+    border-radius: 25px;
+    color: whitesmoke;
+    min-height: 20px;
+    height:2vh;
+    padding: 1.2vw 12px;
+    min-width: 85px;
+    outline: none;
+    width:10vw;
+    font-size:clamp(1rem, 2vw, 1.2rem);
+
+}
 
 
 .imagen{
     position: absolute;
-    background-image: url(./starmanOnCybertruck.png);
+    background-image: url(./the-mandalorian.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+
     background-size: cover; 
-    width: 100vw;
-    height:80vh;
-   
+    width: 100%;
+    height:100%;
+    animation: aparecer 1s ease-in-out;
+
+}
+@keyframes aparecer{
+    to{
+        opacity: 1;
+    }
+    from{
+        opacity: 0;
+    }
 }
 
-.hola{
+@media (max-width: 1000px) {
+    .imagen{
+        background-position: center;
+    }
+}
+@media (min-height: 1544px) {
+    .imagen{
+        background-position: center;
+    }
+}
+@media (min-height: 940px) and (min-width: 1000px) {
+    .imagen{
+        background-position: center;
+    }
+}
+.presentation{
     padding: 0 5vw;
+    z-index: 2;
 
     position: relative;
     grid-row: 1;
 
     width: 100%;
-   height: 100vh;
+   height: 95vh;
     grid-column: 1/3 span;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+  
+   
 
 }
 
-.alejandro__text,.logo__a{
+.presentation-text,.logo__a{
     align-items: center;
 
     display: flex;
     font-family: 'Bebas Neue', cursive;
-    font-size:clamp(3rem, 7vw, 20rem);
+    font-size:clamp(3rem, 7vw, 5rem);
 
 
 }
-.alejandro__text--a{
+.alejandro--a{
 color: red;
-font-size:clamp(7rem, 15vw, 50rem);
+font-size:clamp(7rem, 15vw, 9rem);
 
 }
 
 
-.alejandro__text--tv{
+.alejandro--tv{
     color: red;
-    font-size:clamp(5rem, 10vw, 20rem);
-    
+    font-size:clamp(5rem, 10vw, 7rem);
 }
 
-.alejandro__text
-.chau{
+.carousel{
     position: relative;
     
     grid-row: 5;
 
-    grid-column: 1/3;
+    grid-column: 1/4;
+width: 100%;
+overflow-x:scroll;
+}
+.carousel__container{
+
+    white-space: nowrap;
+    min-width: fit-content;
+    width: 100%;
+    margin: 5vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container__item{
+    aspect-ratio: 16/9;
+    background-image: url(./star-wars-yoda-luke.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    cursor: pointer;
+    height: 22vw;
+    opacity: 1;
+    min-width: 220px;
+    min-height: 220px;
+    margin-left: 2vw;
+    transition: 450ms;
+    transform-origin: center left;
+    object-fit: cover;
+    width:27vw;
+
+}
+.container__item:hover~.container__item,.container__item:active~.container__item{
+    transform:translate3d(100px,0,0);
+}
+/* .carousel__container:hover .container__item,.carousel__container:active  */
+
+.container__item:hover ,.container__item:active{
+    transform:scale(1.2);
+    border: 1px solid whitesmoke;
+}
+
+.item__info{
+    transform-origin: center left;
+    white-space: normal;
+    background-color: linear-gradient(to top, rgba(0,0,0,0.9)0%, rgba(0,0,0,0)100%);
+    font-size: 1rem;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+}
+.display .item__info{
+    opacity: 1;
+}
+.carousel__container:hover~.container__item .item__info,.carousel__container:active~.container__item .item__info{
+    transform:scale(1.4);
+
 
 }
