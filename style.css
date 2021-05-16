@@ -1,264 +1,296 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-html{
-
-    font-size: 62.5%;
-    color: whitesmoke;
-    overflow-x: hidden;
-
+html {
+  font-size: 62.5%;
+  color: whitesmoke;
+  overflow-x: hidden;
 }
 
-body{
-
-    overflow-x: hidden;
-
-    font-size:clamp(1rem, 1.5vw, 2rem);
-    background: rgb(10, 10, 10);
-    overflow-x: hidden;
-
-}
-header{
-
-    position: relative;
-    z-index: 2;
-    padding: 1.5vw 5vw;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 5vw;
-    min-height: 100px;
-    
-
+body {
+  overflow-x: hidden;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  background: #0a0a0a;
+  overflow-x: hidden;
 }
 
-
-main{
-    display: grid;
-    grid-row: repeat(5,1fr);
-    grid-column: repeat(5,1fr);
-    width: 100%;
-    height: 100%;
+header {
+  position: relative;
+  z-index: 2;
+  padding: 1.5vw 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  min-height: 100px;
 }
 
-.fondo_negro{
-    position: absolute;
-    z-index: 1;
-    width: 100vw;
-    height: 50vh;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(255,255,255,0) 100%);
+main {
+  display: -ms-grid;
+  display: grid;
+  grid-row: repeat(5, 1fr);
+  grid-column: repeat(5, 1fr);
+  width: 100%;
+  height: 100%;
 }
 
-.logo{
-
-    width: 2vw;
-    height: 2vw;
-    min-height: 50px;
-    min-width: 50px;
-    color: red;
-    font-size:clamp(7rem, 15vw, 25rem);
+.logo {
+  width: 2vw;
+  height: 2vw;
+  min-height: 50px;
+  min-width: 50px;
+  margin: 2vw;
 }
 
-.header__menu{
-    align-items: center;
-
-    display: flex;
+.logo--a {
+  color: red;
+  font-size: clamp(2rem, 10vw, 10rem);
 }
 
-.header__menu--submenu{
-    
-    position:absolute;
-    z-index: 1;
-    text-decoration: none;
-    background-color: rgb(10, 10, 10);
-    top: 70px;
-    color: whitesmoke;
-    display: none;
-    list-style: none;
-    min-width:2vw;
-    right:5vw; 
-    min-height: 5vh;
-    border-radius: 10px;
-    font-size:clamp(1.5rem, 2vw, 1.7rem);
-
- 
-
+.logo--lejandro {
+  font-size: clamp(2rem, 10vw, 8rem);
 }
+
+.logo--tv {
+  color: red;
+  font-size: clamp(2rem, 10vw, 9rem);
+}
+
+.header__nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__menu--photo {
+  background-image: url(./user-icon/user-icon.png);
+  width: 3vw;
+  height: 3vw;
+  min-height: 30px;
+  min-width: 30px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header__menu--submenu {
+  position: absolute;
+  z-index: 1;
+  text-decoration: none;
+  background-color: #0a0a0a;
+  top: 70px;
+  color: whitesmoke;
+  display: none;
+  list-style: none;
+  min-width: 2vw;
+  right: 5vw;
+  min-height: 5vh;
+  border-radius: 10px;
+  font-size: clamp(1.5rem, 2vw, 1.7rem);
+}
+
 .header__menu--submenu li a {
-    color:whitesmoke;
-    text-decoration: none;
- 
-}
-.header__menu--submenu li{
-    margin: 2.5vh 1.5vw;
-}
-.header__menu:hover ul, ul:hover,.header__menu:active ul, ul:active{
-    text-align: right;
-
-    display: block;
-
-    }
-.header__menu--photo{
-    background-image: url(./user-icon/user-icon.png);
-    width: 3vw;
-    height: 3vw;
-    min-height: 30px;
-    min-width: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;    
-}
-.searh-box{
-    display: flex;
-
-}
-.search-box__input{
-    font-family: sans-serif;
-    background:rgb(0, 0, 0,0.7);
-    border: 0.2vw solid rgba(97, 97, 97, 0.198);
-    border-radius: 25px;
-    color: whitesmoke;
-    min-height: 20px;
-    height:2vh;
-    padding: 1.2vw 12px;
-    min-width: 85px;
-    outline: none;
-    width:10vw;
-    font-size:clamp(1rem, 2vw, 1.2rem);
-
+  color: whitesmoke;
+  text-decoration: none;
 }
 
-
-.main_image{
-    position: absolute;
-    
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
-    width: 100%;
-    height:50%;
-    animation: image-appear 1s ease-in-out;
-
-}
-@keyframes image-appear{
-    to{
-        opacity: 1;
-    }
-    from{
-        opacity: 0;
-    }
+.header__menu--submenu li {
+  margin: 2.5vh 1.5vw;
 }
 
-.presentation{
-    padding: 0 5vw;
-    z-index: 2;
-
-    position: relative;
-    grid-row: 1;
-
-    width: 100%;
-   height: 45vh;
-    grid-column: 1/3 span;
-  
-   
-
+.header__menu:hover ul, ul:hover, .header__menu:active ul, ul:active {
+  text-align: right;
+  display: block;
 }
 
-.presentation-text,.logo__a{
-    align-items: center;
-
-    display: flex;
-    font-family: 'Bebas Neue', cursive;
-    font-size:clamp(3rem, 7vw, 5rem);
-
-
-}
-.alejandro--a{
-color: red;
-font-size:clamp(7rem, 15vw, 9rem);
-
-}
-
-
-.alejandro--tv{
-    color: red;
-    font-size:clamp(5rem, 10vw, 7rem);
+.search-box__input {
+  font-family: sans-serif;
+  background: rgba(0, 0, 0, 0.7);
+  border: 0.2vw solid rgba(97, 97, 97, 0.198);
+  border-radius: 25px;
+  color: whitesmoke;
+  min-height: 20px;
+  height: 2vh;
+  padding: 1.2vw 12px;
+  min-width: 85px;
+  outline: none;
+  width: 10vw;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
-.carousel{
-    position: relative;
-    
-    grid-row: 5;
+.main_image {
+  position: absolute;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 50%;
+  min-height: 340px;
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
+}
 
-    grid-column: 1/4;
-width: 100%;
-overflow-x:scroll;
-}
-.carousel__container{
-
-    white-space: nowrap;
-    min-width: fit-content;
-    width: 100%;
-    margin: 5vw;
-    display: flex;
-    justify-content: space-around;
-}
-#star-wars{
-    background-image: url(./IG-11-Compound-DB.jpg);
-}
-#cybertruck{
-    background-image: url(./elonmusk.jpg);
-
-}
-.container__item{
-    aspect-ratio: 16/9;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    cursor: pointer;
-    height: 22vw;
+@-webkit-keyframes image-appear {
+  to {
     opacity: 1;
-    min-width: 220px;
-    min-height: 220px;
-    margin-left: 2vw;
-    transition: 450ms;
-    transform-origin: center left;
-    object-fit: cover;
-    width:27vw;
-
-}
-.container__item:hover~.container__item,.container__item:active~.container__item{
-    transform:translate3d(100px,0,0);
-}
-/* .carousel__container:hover .container__item,.carousel__container:active  */
-
-.container__item:hover ,.container__item:active{
-    transform:scale(1.2);
-    border: 1px solid whitesmoke;
-}
-
-.item__info{
-    transform-origin: center left;
-    white-space: normal;
-    background-color: linear-gradient(to top, rgba(0,0,0,0.9)0%, rgba(0,0,0,0)100%);
-    font-size: 1rem;
+  }
+  from {
     opacity: 0;
-    transition: 450ms opacity;
-    padding: 10px;
-    position: absolute;
+  }
 }
-.display .item__info{
+
+@keyframes image-appear {
+  to {
     opacity: 1;
-
+  }
+  from {
+    opacity: 0;
+  }
 }
-.carousel__container:hover~.container__item .item__info,.carousel__container:active~.container__item .item__info{
-    transform:scale(1.4);
 
-
+.presentation {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
+
+.presentation__text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 40%;
+  max-height: 162px;
+  overflow-y: hidden;
+}
+
+.presentation-text, .logo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 7vw, 5rem);
+}
+
+.carousel {
+  position: relative;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.carousel__container {
+  white-space: nowrap;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 100%;
+  margin: 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#star-wars {
+  background-image: url(./IG-11-Compound-DB.jpg);
+}
+
+#cybertruck {
+  background-image: url(./elonmusk.jpg);
+}
+
+.container__item {
+  aspect-ratio: 16/9;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  height: 22vw;
+  opacity: 1;
+  min-width: 220px;
+  min-height: 220px;
+  margin-left: 2vw;
+  -webkit-transition: 450ms;
+  transition: 450ms;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 27vw;
+}
+
+.container__item:hover ~ .container__item, .container__item:active ~ .container__item {
+  -webkit-transform: translate3d(100px, 0, 0);
+          transform: translate3d(100px, 0, 0);
+}
+
+/* .carousel__container:hover .container__item,.carousel__container:active  */
+.container__item:hover, .container__item:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border: 1px solid whitesmoke;
+}
+
+.item__info {
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  white-space: normal;
+  background-color: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  font-size: 1rem;
+  opacity: 0;
+  -webkit-transition: 450ms opacity;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+}
+
+.display .item__info {
+  opacity: 1;
+}
+
+.carousel__container:hover ~ .container__item .item__info, .carousel__container:active ~ .container__item .item__info {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+/*# sourceMappingURL=style.css.map */
