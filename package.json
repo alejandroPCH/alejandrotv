@@ -1,0 +1,23 @@
+{
+  "name": "alejandro-tv",
+  "version": "1.0.0",
+  "description": "Alejandro TV es una plataforma donde se guardan mis momentos favoritos de internet ",
+  "main": "code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandroPCH/alejandrotv.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Sass"
+  ],
+  "author": "alejandro <alejandropachas1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alejandroPCH/alejandrotv/issues"
+  },
+  "homepage": "https://github.com/alejandroPCH/alejandrotv#readme"
+}

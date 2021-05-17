@@ -1,10 +1,59 @@
 const item=document.querySelector(".carousel__container")
 const text=document.querySelector(".presentation-text__item")
 const main_image=document.querySelector(".main_image")
+const button=document.querySelector('button')
+const video=document.querySelector('video')
+
+
+
+
+
 
 item.addEventListener('mouseover',grow_item)
 item.addEventListener('mouseout',remove_item)
 item.addEventListener('click', show_item)
+
+
+
+
+
+
+
+
+
+function MediaPlayer(config){
+
+  //config.el == video...so
+  //this.media == video
+  this.media=config.el
+  
+
+//this will contain the value in the instance of MediaPLayer
+//the value of video
+}
+
+
+MediaPlayer.prototype.go=function(){
+
+  //by using prototpe you can access to the this's value
+
+  //excecute when the boton is clicked
+    
+  if(this.media.paused)this.media.play()
+    else this.media.pause()
+
+}
+
+
+//el:video contains the original video
+const player=new MediaPlayer({el:video})
+// objects destructuring 
+button.onclick=()=> player.go();
+
+
+
+
+
 
 
 function show_item(e){
@@ -21,7 +70,7 @@ function show_item(e){
 
 
 
-  text.textContent=`Esta escena es una de mis favoritas pues para mi, es como el inicio del camino de un heroe`
+  // text.textContent=`Esta escena es una de mis favoritas pues para mi, es como el inicio del camino de un heroe`
 
   
 }
