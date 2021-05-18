@@ -1,5 +1,5 @@
 import MediaPlayer from './mediaplayer.js' 
-
+import autoplay from './plugins/autoplay.js'
 
 const item=document.querySelector(".carousel__container")
 const text=document.querySelector(".presentation-text__item")
@@ -21,9 +21,10 @@ item.addEventListener('click', show_item)
 
 
 //el:video contains the original video
-const player=new MediaPlayer({el:video,plugins:[]})
+const player=new MediaPlayer({el:video,plugins:[new autoplay()] })
 // objects destructuring 
-button.onclick=()=> player.media.paused ? player.go() : player.pause();
+
+button.onclick=()=> player.media.muted ? player.unmute() : player.control();
 
 
 
