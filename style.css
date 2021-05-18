@@ -232,11 +232,11 @@ main {
 }
 
 #star-wars {
-  background-image: url(./IG-11-Compound-DB.jpg);
+  background-image: url(./src/images/IG-11-Compound-DB.jpg);
 }
 
 #cybertruck {
-  background-image: url(./elonmusk.jpg);
+  background-image: url(./src/images/elonmusk.jpg);
 }
 
 .container__item {
