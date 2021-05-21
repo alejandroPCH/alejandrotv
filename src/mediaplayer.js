@@ -1,57 +1,92 @@
 
 function MediaPlayer(config){
 
+
+  //"this." will contain the value in the instance of MediaPLayer,
+  //the value of video
+
     //config.el == video...so
     //this.media == video
     this.media=config.el
     this.plugins = config.plugins || [];
 
+    //_initPlugins will make the plugins start running by calling it's function
     this._initPlugins();
 
-  //this will contain the value in the instance of MediaPLayer
-  //the value of video
   }
 
   MediaPlayer.prototype._initPlugins=function(){
 
+
+    const player={
+      play:()=>this.play(),
+      pause:()=>this.pause(),
+      media:this.media,
+
+      
+      get muted(){
+
+        return this.media.muted
+        
+      },
+
+      set muted(value){
+
+        this.media.muted=value
+
+      }
+
+
+    }
+
+
+
+    //forEach will iterated in every plugin we added
     this.plugins.forEach(plugin => {
       
-      plugin.start(this)
-    
+      //and "plugin.start" will run the plugin selected by the interation
+
+      //"this" will represent the MediaPlayer
+
+      plugin.start(player)
+      //in the first iteration the value of "plugin.start(this)" will be...
+
+      //autoplay.start(this)
+
     });
 
   }
   
 
-  MediaPlayer.prototype.prePlay=function(){
+  MediaPlayer.prototype.muteControl=function(){
   
-    //by using prototpe you can access to the this's value
-  
-    //excecute when the boton is clicked
-      this.media.play()
+    // if is called for the first time, this.media.muted will have a false value, so it's going to be converted to a true value  
+    
+    this.media.muted=!this.media.muted
+          
+    // for tha second time is called, it will bring a true value, so it's going to be converted to a false value, so you can hear now the video
+
+
   }
-  
-  MediaPlayer.prototype.unmute=function(){
-  
-    //by using prototpe you can access to the this's value
-  
-    //excecute when the boton is clicked
-      this.media.muted=false
-      
+
+  MediaPlayer.prototype.play=function(){
+
+    this.media.play()
   }
+
+  
+  MediaPlayer.prototype.pause=function(){
+
+    this.media.pause()
+  }
+
   
   MediaPlayer.prototype.control=function(){
     
      
-    this.media.paused ? this.media.play() : this.media.pause()
+    this.media.paused ? this.play() : this.pause()
 
   
-  }
-
-  MediaPlayer.prototype.mute=function(){
-
-    this.media.muted=true
-
   }
 
   

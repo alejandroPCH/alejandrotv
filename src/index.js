@@ -20,11 +20,22 @@ item.addEventListener('click', show_item)
 
 
 
-//el:video contains the original video
-const player=new MediaPlayer({el:video,plugins:[new autoplay()] })
-// objects destructuring 
 
-button.onclick=()=> player.media.muted ? player.unmute() : player.control();
+//el:video contains the original video
+
+const player=new MediaPlayer({
+  
+  //all of these are elements of the MediaPlayer, also they are hosted in mediaplayer.js file
+
+  // objects destructuring 
+  el:video,
+
+  //  Here we will pass all the plugins this project has, for example, here we are passing autoplay in pluging's array 
+  plugins:[new autoplay()] 
+
+})
+
+button.onclick=()=> player.media.muted ? player.muteControl() : player.control();
 
 
 
