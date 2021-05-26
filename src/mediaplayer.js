@@ -12,7 +12,7 @@ function MediaPlayer(config){
 
     //_initPlugins will make the plugins start running by calling it's function
     this._initPlugins();
-
+    this.pauseByUser=false
   }
 
   MediaPlayer.prototype._initPlugins=function(){
@@ -35,7 +35,6 @@ function MediaPlayer(config){
         this.media.muted=value
 
       }
-
 
     }
 

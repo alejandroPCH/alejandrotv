@@ -1,6 +1,6 @@
 import MediaPlayer from './mediaplayer.js' 
-import autoplay from './plugins/autoplay.js'
-
+import autoPlay from './plugins/autoPlay.js'
+import autoPause from './plugins/autoPause.js'
 const item=document.querySelector(".carousel__container")
 const text=document.querySelector(".presentation-text__item")
 const main_image=document.querySelector(".main_image")
@@ -8,8 +8,7 @@ const button=document.querySelector('button')
 const video=document.querySelector('video')
 
 
-
-
+const title=document.getElementsByTagName("title");
 
 
 item.addEventListener('mouseover',grow_item)
@@ -31,7 +30,7 @@ const player=new MediaPlayer({
   el:video,
 
   //  Here we will pass all the plugins this project has, for example, here we are passing autoplay in pluging's array 
-  plugins:[new autoplay()] 
+  plugins:[new autoPlay(), new autoPause(title)] 
 
 })
 
