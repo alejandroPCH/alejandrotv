@@ -1,14 +1,14 @@
-import MediaPlayer from './mediaplayer.js' 
-import autoPlay from './plugins/autoPlay.js'
-import autoPause from './plugins/autoPause.js'
+import MediaPlayer from './mediaplayer' 
+import autoPlay from './plugins/autoPlay'
+import autoPause from './plugins/autoPause'
 const item=document.querySelector(".carousel__container")
 const text=document.querySelector(".presentation-text__item")
-const main_image=document.querySelector(".main_image")
-const button=document.querySelector('button')
+const main_image:HTMLElement=document.querySelector(".main_image")
+const button:HTMLElement=document.querySelector('button')
 const video=document.querySelector('video')
 
 
-const title=document.getElementsByTagName("title");
+const title:HTMLCollectionOf<HTMLTitleElement>=document.getElementsByTagName("title");
 
 
 item.addEventListener('mouseover',grow_item)
@@ -30,7 +30,7 @@ const player=new MediaPlayer({
   el:video,
 
   //  Here we will pass all the plugins this project has, for example, here we are passing autoplay in pluging's array 
-  plugins:[new autoPlay(), new autoPause(title)] 
+  plugins:[new autoPlay(), new autoPause(title[0].innerHTML)] 
 
 })
 
@@ -41,11 +41,12 @@ button.onclick=()=> player.media.muted ? player.muteControl() : player.control()
 
 
 
-function show_item(e){
+ function show_item(e){
   // main_image.style.backgroundImage=e.target.id
   // .setAttribute("style", "background-image: url("
   
-  let style = e.target.currentStyle || window.getComputedStyle(e.target, false),
+  //encuentra la manera que el parametro acepte valores booleanos
+  let style= e.target.currentStyle || window.getComputedStyle(e.target,false),
   bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
   
    main_image.style.backgroundImage=`url(${bi})`
@@ -72,5 +73,16 @@ item.classList.add('display')
 
 function remove_item(){
   document.querySelector(".container__item").classList.remove('display')
+  
+}
+
+
+
+// if the navigator uses "Service Worker" then it will use it
+if('serviceWorker' in navigator){
+
+  navigator.serviceWorker.register('../sw.js').catch(error=>console.log(error.message))
+
+}else{
   
 }
