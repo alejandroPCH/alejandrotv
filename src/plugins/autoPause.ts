@@ -3,14 +3,14 @@ import MediaPlayer from '../mediaplayer'
 class autoPause{
     
     private threshold:number
-    private insideThreshold: boolean
+    private insideThreshold: boolean | undefined
     private pauseByVisibility=false
 
+    title: any
     player:MediaPlayer
-    title: string
 
-    constructor(title: string){
-        
+    constructor(title: HTMLTitleElement){
+
         this.threshold = 0.30
         this.handlerIntersection = this.handlerIntersection.bind(this)
         this.handleVisibility = this.handleVisibility.bind(this)
@@ -43,7 +43,7 @@ class autoPause{
        if(isVisible){
 
         
-        this.title="AlejandroTV"
+        this.title[0].innerHTML="AlejandroTV"
 
         //quieres que cuando el usario de al boton de pause se respete su decision
         
@@ -58,8 +58,7 @@ class autoPause{
             }
         }
        else{
-
-        this.title="Hey!"
+        this.title[0].innerHTML="Hey!"
        
         this.pauseByVisibility=true
         this.player.pause() 

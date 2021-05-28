@@ -2,10 +2,11 @@
   "name": "alejandro-tv",
   "version": "1.0.0",
   "description": "Alejandro TV es una plataforma donde se guardan mis momentos favoritos de internet ",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"live-server"
+   
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,11 @@
   },
   "homepage": "https://github.com/alejandroPCH/alejandrotv#readme",
   "devDependencies": {
-    "live-server": "^1.2.1"
-  }
+    "parcel-bundler": "^1.12.5",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.3.2"
+  },
+  "browserslist": [
+    "last 1 chrome version"
+  ]
 }

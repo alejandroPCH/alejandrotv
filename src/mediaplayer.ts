@@ -1,10 +1,17 @@
+interface ConfigParam{
+
+   el: any;
+  //it's not necessary to have plugins 
+   plugins?:Array<any>; 
+}
+
 
 class MediaPlayer {
 
   media:HTMLMediaElement
   plugins:Array<any>
 
-  constructor(config: { el: any; plugins: any; }) {
+  constructor(config: ConfigParam) {
 
 
     //"this." will contain the value in the instance of MediaPLayer,
@@ -14,7 +21,7 @@ class MediaPlayer {
     //config.el == video...so
     //this.media == video
     this.media = config.el;
-    this.plugins = config.plugins || [];
+    this.plugins = config.plugins
 
     //_initPlugins will make the plugins start running by calling it's function
     this.initPlugins();
@@ -43,7 +50,6 @@ class MediaPlayer {
   }
 
   play() {
-
     this.media.play();
   }
   pause() {
