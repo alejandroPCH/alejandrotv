@@ -49,7 +49,21 @@ button.onclick=()=>{
   video.classList.add('render')
 }
 
-function grow_item(e){
+function setTimeOut(time){
+
+  return new Promise(()=>setTimeout(()=>video.classList.add('render'),time))
+
+}
+function removeMainImage():void {
+  main_image.classList.add("remove")
+
+  setTimeout(()=>main_image.style.backgroundImage=null,1000)
+}
+
+function hola(){
+  console.log("das")
+}
+ function grow_item(e){
 
 
   
@@ -69,8 +83,10 @@ item.classList.add('display')
   main_image.style.animation = null; 
 
 button.classList.add("displayButton")
-
-setTimeout(()=>video.classList.add('render'),3000)
+setTimeout(()=>{
+  
+  video.classList.add('render');
+  removeMainImage()} ,3000)
   // text.textContent=`Esta escena es una de mis favoritas pues para mi, es como el inicio del camino de un heroe`
 
 

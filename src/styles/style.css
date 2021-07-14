@@ -191,6 +191,11 @@ main {
           animation: image-appear 1s ease-in-out;
 }
 
+.remove.main_image {
+  -webkit-animation: image-disappear 1s ease-in-out;
+          animation: image-disappear 1s ease-in-out;
+}
+
 @-webkit-keyframes image-appear {
   to {
     opacity: 1;
@@ -206,6 +211,24 @@ main {
   }
   from {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes image-disappear {
+  to {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
+  }
+}
+
+@keyframes image-disappear {
+  to {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
   }
 }
 
@@ -279,7 +302,7 @@ main {
   height: 18vw;
   opacity: 1;
   min-width: 180px;
-  min-height: 180px;
+  min-height: 120px;
   -webkit-transition: 450ms;
   transition: 450ms;
   -o-object-fit: cover;
