@@ -7,7 +7,6 @@ const main_image:HTMLElement=document.querySelector(".main_image")
 const button:HTMLElement=document.querySelector('.movie__button')
 const video=document.querySelector('video')
 
-
 const title:any=document.getElementsByTagName("title");
 
 
@@ -18,8 +17,22 @@ item.addEventListener('click', show_item)
 
 
 
+video.addEventListener('ended',()=>{
+  
+setTimeout(()=>{ 
+                video.classList.remove('disappear')
+                video.classList.remove('render')},1000,
+                video.classList.add('disappear'),
+                main_image.classList.remove('remove')
+                )
+
+//main image appear 
+//video disappear
 
 
+
+  }
+)
 
   //el:video contains the original video
 
@@ -49,29 +62,20 @@ button.onclick=()=>{
   video.classList.add('render')
 }
 
-function setTimeOut(time){
 
-  return new Promise(()=>setTimeout(()=>video.classList.add('render'),time))
-
-}
 function removeMainImage():void {
   main_image.classList.add("remove")
 
-  setTimeout(()=>main_image.style.backgroundImage=null,1000)
 }
 
-function hola(){
-  console.log("das")
-}
  function grow_item(e){
 
 
   
-item.classList.add('display')
+  item.classList.add('display')
 
+  if(video.classList.contains('render'))return
 
-  // main_image.style.backgroundImage=e.target.id
-  // .setAttribute("style", "background-image: url("
   
   let style= e.target.currentStyle || window.getComputedStyle(e.target,null),
   bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
@@ -82,12 +86,11 @@ item.classList.add('display')
   main_image.offsetHeight; /* trigger reflow */
   main_image.style.animation = null; 
 
-button.classList.add("displayButton")
-setTimeout(()=>{
+  button.classList.add("displayButton")
+  setTimeout(()=>{
   
-  video.classList.add('render');
-  removeMainImage()} ,3000)
-  // text.textContent=`Esta escena es una de mis favoritas pues para mi, es como el inicio del camino de un heroe`
+    video.classList.add('render');
+    removeMainImage()} ,3000)
 
 
 }

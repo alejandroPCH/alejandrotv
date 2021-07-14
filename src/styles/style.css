@@ -89,12 +89,19 @@ main {
   min-width: 100vw;
   height: auto;
   display: none;
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
 }
 
 .movie.render {
   display: block;
   -webkit-animation: image-appear 1s ease-in-out;
           animation: image-appear 1s ease-in-out;
+}
+
+.movie.render.disappear {
+  -webkit-animation: image-disappear 1s ease-out;
+          animation: image-disappear 1s ease-out;
 }
 
 .movie__button {
@@ -189,6 +196,7 @@ main {
   min-height: 540px;
   -webkit-animation: image-appear 1s ease-in-out;
           animation: image-appear 1s ease-in-out;
+  z-index: 2;
 }
 
 .remove.main_image {
