@@ -12,10 +12,9 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   font-size: clamp(1rem, 1.5vw, 2rem);
   background: #0a0a0a;
-  overflow-x: hidden;
 }
 
 header {
@@ -255,55 +254,43 @@ main {
 .carousel {
   position: relative;
   z-index: 2;
-  -ms-grid-row: 5;
-  grid-row: 5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
   width: 100%;
-  overflow-x: scroll;
 }
 
 .carousel__container {
-  white-space: nowrap;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  width: 100%;
-  margin: 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-#star-wars {
-  background-image: url(../assets/images/IG-11-Compound-DB.jpg);
-}
-
-#cybertruck {
-  background-image: url(../assets/images/elonmusk.jpg);
-}
-
-.container__item {
+.carousel__container .container__item {
   aspect-ratio: 16/9;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  height: 22vw;
+  height: 18vw;
   opacity: 1;
-  min-width: 220px;
-  min-height: 220px;
-  margin-left: 2vw;
+  min-width: 180px;
+  min-height: 180px;
   -webkit-transition: 450ms;
   transition: 450ms;
-  -webkit-transform-origin: center left;
-          transform-origin: center left;
   -o-object-fit: cover;
      object-fit: cover;
   width: 27vw;
+  margin-right: 0;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+#star-wars {
+  background-image: url(../assets/images/IG-11-Compound-DB.jpg);
 }
 
 .container__item:hover ~ .container__item, .container__item:active ~ .container__item {
