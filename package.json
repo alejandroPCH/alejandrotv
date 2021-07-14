@@ -1,16 +1,15 @@
 {
   "name": "alejandro-tv",
   "version": "1.0.0",
-  "description": "Alejandro TV es una plataforma donde se guardan mis momentos favoritos de internet ",
-  "main": "src/index.js",
+  "description": "Alejandro TV it's a platform were my favorites my best short film is saved  ",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-   
     "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alejandroPCH/alejandrotv.git"
+    "url": "git+https://github.com/alejandropch/alejandrotv.git"
   },
   "keywords": [
     "JavaScript",
@@ -19,9 +18,9 @@
   "author": "alejandro <alejandropachas1@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alejandroPCH/alejandrotv/issues"
+    "url": "https://github.com/alejandropch/alejandrotv/issues"
   },
-  "homepage": "https://github.com/alejandroPCH/alejandrotv#readme",
+  "homepage": "https://github.com/alejandropch/alejandrotv#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
     "ts-loader": "^9.2.2",
