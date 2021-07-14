@@ -15,6 +15,7 @@ body {
   overflow: hidden;
   font-size: clamp(1rem, 1.5vw, 2rem);
   background: #0a0a0a;
+  min-height: 100vh;
 }
 
 header {
