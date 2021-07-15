@@ -6,17 +6,18 @@
 
 .presentation{
     display: flex;
-    margin-top: 10vw;
     width: 100%;
     min-height: 160px;
-
+    align-items: flex-end;
+    height: 40vh;
     &__text{
     
     height: 30vw;
     font-weight: 700;
     font-size:clamp(1.5rem, 2vw, 1.7rem);
     position: absolute;
-    width: 40%;
+    width: clamp(45rem, 40vw, 70rem);
+
 
     min-width: 250px;
     max-height: 162px;
@@ -276,9 +277,15 @@
     }
 }
 
-@media screen and (max-width: 670px){
+@media screen and (max-width: 790px){
     
-
+.carousel{
+    top: 30vh;
+}
+.movie__button{
+   
+    top: clamp(23.5rem,35vw,30rem);
+}
     .presentation {
         display: flex;
 
@@ -286,14 +293,16 @@
         -webkit-box-align:center;
         -webkit-box-pack:center;
          display:-webkit-box;
-         top: 50vh;
+         top: 35vh;
          justify-content: center;
 
         &__text {
+            height: 20vh;
 
             text-align: center;
+            margin: 0 auto;
+            min-width: 250px;
             width: 70%;
-
         }
     }
     

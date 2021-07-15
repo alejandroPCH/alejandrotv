@@ -9,8 +9,9 @@
     height: 50px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-
-
+    justify-content: center;
+    align-items: center;
+  
 
  .Icon{
     width:25px;
@@ -41,7 +42,7 @@
         background-color: rgb(179, 179, 179);
         }
 .movie__button.displayButton{
-display: block;
 animation: image-appear 1s ease-in-out;
+display: flex;
 
 }

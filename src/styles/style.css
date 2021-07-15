@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   font-size: clamp(1rem, 1.5vw, 2rem);
   background: #0a0a0a;
   min-height: 100vh;
@@ -60,6 +60,12 @@ main {
   height: 50px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .movie__button .Icon {
@@ -89,18 +95,23 @@ main {
 }
 
 .movie__button.displayButton {
-  display: block;
   -webkit-animation: image-appear 1s ease-in-out;
           animation: image-appear 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .presentation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 10vw;
   width: 100%;
   min-height: 160px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 40vh;
 }
 
 .presentation__text {
@@ -108,7 +119,7 @@ main {
   font-weight: 700;
   font-size: clamp(1.5rem, 2vw, 1.7rem);
   position: absolute;
-  width: 40%;
+  width: clamp(45rem, 40vw, 70rem);
   min-width: 250px;
   max-height: 162px;
 }
@@ -375,7 +386,13 @@ main {
   }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 790px) {
+  .carousel {
+    top: 30vh;
+  }
+  .movie__button {
+    top: clamp(23.5rem, 35vw, 30rem);
+  }
   .presentation {
     display: -ms-flexbox;
     display: flex;
@@ -383,12 +400,15 @@ main {
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
-    top: 50vh;
+    top: 35vh;
     -ms-flex-pack: center;
         justify-content: center;
   }
   .presentation__text {
+    height: 20vh;
     text-align: center;
+    margin: 0 auto;
+    min-width: 250px;
     width: 70%;
   }
 }
