@@ -6,7 +6,10 @@ const text=document.querySelector(".presentation-text__item")
 const main_image:HTMLElement=document.querySelector(".main_image")
 const button:HTMLElement=document.querySelector('.movie__button')
 const buttonPlayOrPause:HTMLElement=document.querySelector('.Icon')
+const playOrPause=buttonPlayOrPause.classList;
+
 const buttonTextPlayOrPause:HTMLElement=document.querySelector('.Text')
+const icon:HTMLElement=document.querySelector('.Icon.State')
 
 const video=document.querySelector('video')
 
@@ -15,13 +18,17 @@ const title:any=document.getElementsByTagName("title");
 
 item.addEventListener('mouseover',grow_item)
 item.addEventListener('mouseout',remove_item)
-// item.addEventListener('click', show_item)
+item.addEventListener('click', show_item)
 
 
 
 
 video.addEventListener('ended',()=>{
-  
+  player.media.muted =true
+  playOrPause.remove('Pause')
+
+  playOrPause.add('Play')
+
 setTimeout(()=>{ 
                 video.classList.remove('disappear')
                 video.classList.remove('render')},1000,
@@ -45,16 +52,20 @@ setTimeout(()=>{
     plugins:[new autoPlay(), new autoPause(title)] 
 
   })
-
+  console.log(icon)               
 button.onclick=()=>{
 
-  const playOrPause=buttonPlayOrPause.classList;
 
 
   show_item();
 
   if(video.classList.contains('render') && player.media.muted===true){
-                                          
+    icon.classList.remove('Mute')
+    icon.classList.add('unMute')
+    playOrPause.remove('Play')
+    playOrPause.add('Pause')
+
+
     player.media.muted=false
     return
   }
@@ -73,12 +84,6 @@ button.onclick=()=>{
 
 
 
-if(buttonPlayOrPause.classList.contains('Play')){
-  
-console.log("dsad")
-        
-
-}
 
 }
 

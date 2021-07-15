@@ -86,10 +86,16 @@ main {
   background-position: center;
 }
 
-.movie__button .Icon.Mute {
+.movie__button .Icon.State.Mute {
   background-image: url(../assets/icons/mute.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
+  margin-left: 1rem;
+}
+
+.movie__button .Icon.State.unMute {
+  display: none;
 }
 
 .movie__button:hover {

@@ -28,11 +28,20 @@
     background-repeat: no-repeat;
     background-position: center;
  }
- &.Mute{
-   background-image: url(../assets/icons/mute.svg);
-   background-repeat: no-repeat;
-   background-position: center;
+ &.State{
+
+   &.Mute{
+      background-image: url(../assets/icons/mute.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin-left: 1rem;
+    }
+    &.unMute{
+       display: none;
+      }
  }
+ 
 
 }
 
