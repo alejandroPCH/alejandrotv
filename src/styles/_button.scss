@@ -28,7 +28,11 @@
     background-repeat: no-repeat;
     background-position: center;
  }
- 
+ &.Mute{
+   background-image: url(../assets/icons/mute.svg);
+   background-repeat: no-repeat;
+   background-position: center;
+ }
 
 }
 

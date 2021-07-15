@@ -38,59 +38,6 @@
 }
 
 
-.header__menu{
-    display: flex;
-        align-items: center;
-        
-    &--photo{
-        background-image: url(../assets/icons/user-icon.png);
-        width: 3vw;
-        height: 3vw;
-        min-height: 30px;
-        min-width: 30px;
-        display: inline-block;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;    
-    }
-    
-    &--submenu{
-    
-    position:absolute;
-    z-index: 1;
-    text-decoration: none;
-    background-color: rgb(10, 10, 10);
-    top: 70px;
-    color: whitesmoke;
-    display: none;
-    list-style: none;
-    min-width:2vw;
-    right:5vw; 
-    min-height: 5vh;
-    border-radius: 10px;
-    font-size:clamp(1.5rem, 2vw, 1.7rem);
-
-    & li{
-        margin: 2.5vh 1.5vw;
-        & a {
-            color:whitesmoke;
-            text-decoration: none;
-         
-        }
-        
-    }
-     
-
-}
-}
-
-.header__menu:hover ul, ul:hover,.header__menu:active ul, ul:active{
-    text-align: right;
-
-    display: block;
-
-    }
-
 .header__nav{
     z-index: 1;
 
@@ -99,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     margin: 3vw 0;
+
 }
 
 .logo{
@@ -109,8 +57,7 @@
         display: flex;
       
     
-    width: 2vw;
-    height: 2vw;
+
     min-height: 50px;
     min-width: 50px;
    
@@ -118,18 +65,18 @@
 
     &--a{
         color: red;
-        font-size:clamp(2rem, 7vw, 10rem);
+        font-size:clamp(3rem, 7vw, 10rem);
         
         }
     &--lejandro{
 
-        font-size:clamp(2rem, 7vw, 8rem);
+        font-size:clamp(3rem, 7vw, 8rem);
     }
     
     
     &--tv{
         color: red;
-        font-size:clamp(2rem, 7vw, 9rem);
+        font-size:clamp(3rem, 7vw, 9rem);
         }
 }
 
@@ -313,6 +260,13 @@
     
     }
     
+    .header__nav{
+    
+        justify-content: center;
+    
+    }
+
+
     .movie__button{
         top: clamp(20rem,45vh,35rem);
     }

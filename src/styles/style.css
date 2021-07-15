@@ -86,6 +86,12 @@ main {
   background-position: center;
 }
 
+.movie__button .Icon.Mute {
+  background-image: url(../assets/icons/mute.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .movie__button:hover {
   background-color: gainsboro;
 }
@@ -137,57 +143,6 @@ main {
   min-width: 500px;
 }
 
-.header__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header__menu--photo {
-  background-image: url(../assets/icons/user-icon.png);
-  width: 3vw;
-  height: 3vw;
-  min-height: 30px;
-  min-width: 30px;
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.header__menu--submenu {
-  position: absolute;
-  z-index: 1;
-  text-decoration: none;
-  background-color: #0a0a0a;
-  top: 70px;
-  color: whitesmoke;
-  display: none;
-  list-style: none;
-  min-width: 2vw;
-  right: 5vw;
-  min-height: 5vh;
-  border-radius: 10px;
-  font-size: clamp(1.5rem, 2vw, 1.7rem);
-}
-
-.header__menu--submenu li {
-  margin: 2.5vh 1.5vw;
-}
-
-.header__menu--submenu li a {
-  color: whitesmoke;
-  text-decoration: none;
-}
-
-.header__menu:hover ul, ul:hover, .header__menu:active ul, ul:active {
-  text-align: right;
-  display: block;
-}
-
 .header__nav {
   z-index: 1;
   -webkit-box-align: center;
@@ -211,24 +166,22 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 2vw;
-  height: 2vw;
   min-height: 50px;
   min-width: 50px;
 }
 
 .logo--a {
   color: red;
-  font-size: clamp(2rem, 7vw, 10rem);
+  font-size: clamp(3rem, 7vw, 10rem);
 }
 
 .logo--lejandro {
-  font-size: clamp(2rem, 7vw, 8rem);
+  font-size: clamp(3rem, 7vw, 8rem);
 }
 
 .logo--tv {
   color: red;
-  font-size: clamp(2rem, 7vw, 9rem);
+  font-size: clamp(3rem, 7vw, 9rem);
 }
 
 .movie {
@@ -417,6 +370,11 @@ main {
   .container__item:hover, .container__item:active {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
+  }
+  .header__nav {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .movie__button {
     top: clamp(20rem, 45vh, 35rem);
