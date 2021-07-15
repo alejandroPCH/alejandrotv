@@ -23,7 +23,10 @@
     max-height: 162px;
     
     }
-
+    &__image{
+    position: relative;
+    align-self: flex-start;
+}
 
 
 }

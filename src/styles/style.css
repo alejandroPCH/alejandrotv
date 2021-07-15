@@ -165,6 +165,12 @@ main {
   max-height: 162px;
 }
 
+.presentation__image {
+  position: relative;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 .header__menu {
   display: -webkit-box;
   display: -ms-flexbox;
