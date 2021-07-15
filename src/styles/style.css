@@ -298,15 +298,15 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  height: 18vw;
+  height: 15vw;
   opacity: 1;
-  min-width: 180px;
-  min-height: 120px;
+  min-width: 395px;
+  min-height: 243px;
   -webkit-transition: 450ms;
   transition: 450ms;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 27vw;
+  width: 25vw;
   margin-right: 0;
   -webkit-transform-origin: center center;
           transform-origin: center center;
@@ -390,6 +390,16 @@ main {
   .carousel {
     top: 30vh;
   }
+  .carousel__container {
+    margin-bottom: 30rem;
+    margin-top: 5rem;
+  }
+  .carousel__container .container__item {
+    min-width: 200px;
+    min-height: 130px;
+    width: 50vw;
+    height: 30vh;
+  }
   .movie__button {
     top: clamp(23.5rem, 35vw, 30rem);
   }
@@ -410,6 +420,10 @@ main {
     margin: 0 auto;
     min-width: 250px;
     width: 70%;
+  }
+  .container__item:hover, .container__item:active {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 /*# sourceMappingURL=style.css.map */
