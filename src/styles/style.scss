@@ -168,8 +168,14 @@
     cursor: pointer;
     height: 15vw;
     opacity: 1;
+    
+
+    max-height: 265px;
     min-width: 395px;
+    max-width: 420px;
     min-height: 243px;
+
+
     transition: 450ms;
     object-fit: cover;
     width: 25vw;
@@ -248,7 +254,7 @@
    
 
      .container__item{
-        min-height: 130px;
+        min-height: 170px;
         min-width: 250px;
         width: 50vw;
         height: 30vh;
@@ -271,7 +277,7 @@
 
     .movie__button{
         position: absolute;
-        top: clamp(20rem,45vh,35rem);
+        top: clamp(35rem, 45vh, 35rem);
     }
     .presentation {
         display: flex;

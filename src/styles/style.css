@@ -273,7 +273,9 @@ main {
   cursor: pointer;
   height: 15vw;
   opacity: 1;
+  max-height: 265px;
   min-width: 395px;
+  max-width: 420px;
   min-height: 243px;
   -webkit-transition: 450ms;
   transition: 450ms;
@@ -368,7 +370,7 @@ main {
     margin-top: 7rem;
   }
   .carousel__container .container__item {
-    min-height: 130px;
+    min-height: 170px;
     min-width: 250px;
     width: 50vw;
     height: 30vh;
@@ -385,7 +387,7 @@ main {
   }
   .movie__button {
     position: absolute;
-    top: clamp(20rem, 45vh, 35rem);
+    top: clamp(35rem, 45vh, 35rem);
   }
   .presentation {
     display: -ms-flexbox;
