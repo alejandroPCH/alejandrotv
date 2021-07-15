@@ -12,7 +12,10 @@
 
     &__container{
         position: relative;
+        animation: image-appear 1s ease-in-out;
     }
+ 
+
     &__text{
     
     height: 30vw;
@@ -22,6 +25,7 @@
 
     width: clamp(45rem, 40vw, 70rem);
 
+    animation: image-appear 1s ease-in-out;
 
     min-width: 250px;
     max-height: 162px;
@@ -33,11 +37,14 @@
     align-self: flex-start;
     width: 35vw;
     min-width: 500px;
+    animation: image-appear 1s ease-in-out;
     }
 
 }
 
-
+.presentation__container.disappear{
+    animation: image-disappear 1s ease-in-out;
+    }
 .header__nav{
     z-index: 1;
 
@@ -52,9 +59,8 @@
 .logo{
     font-family: 'Bebas Neue', cursive;
 
-        align-items: center;
-        
-        display: flex;
+    align-items: center;
+    display: flex;
       
     
 
@@ -102,20 +108,6 @@
 
 
 
-.search-box__input{
-    background:rgba(0, 0, 0, 0.7);
-    border: 0.2vw solid rgba(97, 97, 97, 0.198);
-    border-radius: 25px;
-    color: whitesmoke;
-    min-height: 20px;
-    height:2vh;
-    padding: 1.2vw 12px;
-    min-width: 85px;
-    outline: none;
-    width:10vw;
-    font-size:clamp(1rem, 2vw, 1.2rem);
-
-}
 
 .main_image{
     position: absolute;
@@ -128,7 +120,7 @@
     min-height: 540px;
     animation: image-appear 1s ease-in-out;
     z-index: 2;
-
+display: block;
 }
 
 
@@ -137,7 +129,6 @@
 
 .remove.main_image{
     animation: image-disappear 1s ease-in-out;
-
 }
 
 
@@ -171,10 +162,10 @@
     
 
     max-height: 265px;
+    min-height: 243px;
+    
     min-width: 395px;
     max-width: 420px;
-    min-height: 243px;
-
 
     transition: 450ms;
     object-fit: cover;

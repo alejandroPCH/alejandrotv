@@ -2,13 +2,16 @@ import MediaPlayer from './mediaplayer'
 import autoPlay from './plugins/autoPlay'
 import autoPause from './plugins/autoPause'
 const item=document.querySelector(".container__item")
-const text=document.querySelector(".presentation-text__item")
+const presentation__text=document.querySelector(".presentation__text")
+const presentation__image=document.querySelector(".presentation__image")
+
+const presentation__container:HTMLElement=document.querySelector(".presentation__container")
+
 const main_image:HTMLElement=document.querySelector(".main_image")
 const button:HTMLElement=document.querySelector('.movie__button')
 const buttonPlayOrPause:HTMLElement=document.querySelector('.Icon')
 const playOrPause=buttonPlayOrPause.classList;
 
-const buttonTextPlayOrPause:HTMLElement=document.querySelector('.Text')
 const icon:HTMLElement=document.querySelector('.Icon.State')
 
 const video=document.querySelector('video')
@@ -24,16 +27,25 @@ item.addEventListener('click', show_item)
 
 
 video.addEventListener('ended',()=>{
+  
   player.media.muted =true
+  
   playOrPause.remove('Pause')
+
+  presentation__image.classList.remove('disappear')
+  presentation__text.classList.remove('disappear')
 
   playOrPause.add('Play')
 
 setTimeout(()=>{ 
                 video.classList.remove('disappear')
-                video.classList.remove('render')},1000,
+                video.classList.remove('render')
+              
+              
+              },1000,
                 video.classList.add('disappear'),
                 main_image.classList.remove('remove')
+
                 )
 
   }
@@ -60,6 +72,11 @@ button.onclick=()=>{
   show_item();
 
   if(video.classList.contains('render') && player.media.muted===true){
+  
+    
+    setTimeout(() =>{presentation__container.style.display = 'none'},1000,presentation__container.classList.add('disappear'))
+  
+  
     icon.classList.remove('Mute')
     icon.classList.add('unMute')
     playOrPause.remove('Play')
@@ -71,12 +88,24 @@ button.onclick=()=>{
   }
 
   if(playOrPause.contains('Play')){
+     
       playOrPause.remove('Play')
       playOrPause.add('Pause')
+   
+     
+
+      setTimeout(() =>{presentation__container.style.display = 'none'},1000,presentation__container.classList.add('disappear'))
+
+      
     }else{
    
       playOrPause.remove('Pause')
       playOrPause.add('Play')
+ 
+
+      presentation__container.style.display = 'block'
+      presentation__container.classList.remove('disappear')
+      
     }
 
 
@@ -90,6 +119,10 @@ button.onclick=()=>{
  function show_item(){
 
   video.classList.add('render')
+
+
+ 
+
   main_image.classList.add('remove')
 }
 

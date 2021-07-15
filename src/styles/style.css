@@ -128,6 +128,8 @@ main {
 
 .presentation__container {
   position: relative;
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
 }
 
 .presentation__text {
@@ -136,6 +138,8 @@ main {
   font-size: clamp(1.3rem, 2vw, 1.7rem);
   position: relative;
   width: clamp(45rem, 40vw, 70rem);
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
   min-width: 250px;
   max-height: 162px;
 }
@@ -147,6 +151,13 @@ main {
       align-self: flex-start;
   width: 35vw;
   min-width: 500px;
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
+}
+
+.presentation__container.disappear {
+  -webkit-animation: image-disappear 1s ease-in-out;
+          animation: image-disappear 1s ease-in-out;
 }
 
 .header__nav {
@@ -212,20 +223,6 @@ main {
           animation: image-disappear 1s ease-out;
 }
 
-.search-box__input {
-  background: rgba(0, 0, 0, 0.7);
-  border: 0.2vw solid rgba(97, 97, 97, 0.198);
-  border-radius: 25px;
-  color: whitesmoke;
-  min-height: 20px;
-  height: 2vh;
-  padding: 1.2vw 12px;
-  min-width: 85px;
-  outline: none;
-  width: 10vw;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-
 .main_image {
   position: absolute;
   -webkit-filter: brightness(50%);
@@ -239,6 +236,7 @@ main {
   -webkit-animation: image-appear 1s ease-in-out;
           animation: image-appear 1s ease-in-out;
   z-index: 2;
+  display: block;
 }
 
 .remove.main_image {
@@ -274,9 +272,9 @@ main {
   height: 15vw;
   opacity: 1;
   max-height: 265px;
+  min-height: 243px;
   min-width: 395px;
   max-width: 420px;
-  min-height: 243px;
   -webkit-transition: 450ms;
   transition: 450ms;
   -o-object-fit: cover;
