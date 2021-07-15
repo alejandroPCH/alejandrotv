@@ -48,13 +48,27 @@ setTimeout(()=>{
 
 button.onclick=()=>{
 
+  const playOrPause=buttonPlayOrPause.classList;
+
+
   show_item();
   if(video.classList.contains('render') && player.media.muted===true){
-                                          player.media.muted=false
-                                          console.log("noooooo")
-                                            return}
+                                          
+    player.media.muted=false
+    return
+  }
+
+  if(playOrPause.contains('Play')){
+      playOrPause.remove('Play')
+      playOrPause.add('Pause')
+    }else{
+   
+      playOrPause.remove('Pause')
+      playOrPause.add('Play')
+    }
+
+
  player.media.muted ? player.muteControl() : player.control();
-}
 
 
 
@@ -65,7 +79,7 @@ console.log("dsad")
 
 }
 
-
+}
 
  function show_item(){
 
