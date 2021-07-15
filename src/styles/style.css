@@ -94,63 +94,23 @@ main {
           animation: image-appear 1s ease-in-out;
 }
 
-.logo {
-  font-family: 'Bebas Neue', cursive;
-  width: 2vw;
-  height: 2vw;
-  min-height: 50px;
-  min-width: 50px;
-  margin: 2vw;
-}
-
-.logo--a {
-  color: red;
-  font-size: clamp(2rem, 7vw, 10rem);
-}
-
-.logo--lejandro {
-  font-size: clamp(2rem, 7vw, 8rem);
-}
-
-.logo--tv {
-  color: red;
-  font-size: clamp(2rem, 7vw, 9rem);
-}
-
-.header__nav {
-  z-index: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
+.presentation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin-top: 10vw;
+  width: 100%;
+  min-height: 160px;
 }
 
-.movie {
-  z-index: 0;
+.presentation__text {
+  height: 30vw;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2vw, 1.7rem);
   position: absolute;
-  width: auto;
-  min-width: 100vw;
-  height: auto;
-  display: none;
-  -webkit-animation: image-appear 1s ease-in-out;
-          animation: image-appear 1s ease-in-out;
-}
-
-.movie.render {
-  display: block;
-  -webkit-animation: image-appear 1s ease-in-out;
-          animation: image-appear 1s ease-in-out;
-}
-
-.movie.render.disappear {
-  -webkit-animation: image-disappear 1s ease-out;
-          animation: image-disappear 1s ease-out;
+  width: 40%;
+  min-width: 250px;
+  max-height: 162px;
 }
 
 .header__menu {
@@ -190,18 +150,83 @@ main {
   font-size: clamp(1.5rem, 2vw, 1.7rem);
 }
 
+.header__menu--submenu li {
+  margin: 2.5vh 1.5vw;
+}
+
 .header__menu--submenu li a {
   color: whitesmoke;
   text-decoration: none;
 }
 
-.header__menu--submenu li {
-  margin: 2.5vh 1.5vw;
-}
-
 .header__menu:hover ul, ul:hover, .header__menu:active ul, ul:active {
   text-align: right;
   display: block;
+}
+
+.header__nav {
+  z-index: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Bebas Neue', cursive;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 2vw;
+  height: 2vw;
+  min-height: 50px;
+  min-width: 50px;
+  margin: 2vw;
+}
+
+.logo--a {
+  color: red;
+  font-size: clamp(2rem, 7vw, 10rem);
+}
+
+.logo--lejandro {
+  font-size: clamp(2rem, 7vw, 8rem);
+}
+
+.logo--tv {
+  color: red;
+  font-size: clamp(2rem, 7vw, 9rem);
+}
+
+.movie {
+  z-index: 0;
+  position: absolute;
+  width: auto;
+  min-width: 100vw;
+  height: auto;
+  display: none;
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
+}
+
+.movie.render {
+  display: block;
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
+}
+
+.movie.render.disappear {
+  -webkit-animation: image-disappear 1s ease-out;
+          animation: image-disappear 1s ease-out;
 }
 
 .search-box__input {
@@ -236,84 +261,6 @@ main {
 .remove.main_image {
   -webkit-animation: image-disappear 1s ease-in-out;
           animation: image-disappear 1s ease-in-out;
-}
-
-@-webkit-keyframes image-appear {
-  to {
-    opacity: 1;
-  }
-  from {
-    opacity: 0;
-  }
-}
-
-@keyframes image-appear {
-  to {
-    opacity: 1;
-  }
-  from {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes image-disappear {
-  to {
-    opacity: 0;
-  }
-  from {
-    opacity: 1;
-  }
-}
-
-@keyframes image-disappear {
-  to {
-    opacity: 0;
-  }
-  from {
-    opacity: 1;
-  }
-}
-
-.presentation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 10vw;
-  width: 100%;
-  min-height: 160px;
-}
-
-.presentation__text {
-  font-size: clamp(1.5rem, 2vw, 1.7rem);
-  position: absolute;
-  height: 30vw;
-  width: 40%;
-  min-width: 250px;
-  max-height: 162px;
-}
-
-@media screen and (max-width: 670px) {
-  .presentation {
-    position: relative;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    display: -webkit-box;
-  }
-  .presentation__text {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-    text-align: center;
-    width: 70%;
-  }
-}
-
-.presentation__text, .logo {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .carousel {
@@ -390,5 +337,59 @@ main {
 .carousel__container:hover ~ .container__item .item__info, .carousel__container:active ~ .container__item .item__info {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
+}
+
+@-webkit-keyframes image-appear {
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes image-appear {
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes image-disappear {
+  to {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
+  }
+}
+
+@keyframes image-disappear {
+  to {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .presentation {
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    top: 50vh;
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .presentation__text {
+    text-align: center;
+    width: 70%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

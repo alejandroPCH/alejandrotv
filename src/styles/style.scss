@@ -2,64 +2,31 @@
 @import "./button";
 
 
-.logo{
-    font-family: 'Bebas Neue', cursive;
-
-    width: 2vw;
-    height: 2vw;
-    min-height: 50px;
-    min-width: 50px;
-   
-    margin: 2vw;
 
 
-    &--a{
-        color: red;
-        font-size:clamp(2rem, 7vw, 10rem);
-        
-        }
-    &--lejandro{
-
-        font-size:clamp(2rem, 7vw, 8rem);
-    }
-    
-    
-    &--tv{
-        color: red;
-        font-size:clamp(2rem, 7vw, 9rem);
-        }
-}
-
-.header__nav{
-    z-index: 1;
-
-    align-items: center;
-    width: 100%;
+.presentation{
     display: flex;
-    justify-content: space-between;
+    margin-top: 10vw;
+    width: 100%;
+    min-height: 160px;
+
+    &__text{
     
-
-
-}
-
-.movie{
-    z-index: 0;
+    height: 30vw;
+    font-weight: 700;
+    font-size:clamp(1.5rem, 2vw, 1.7rem);
     position: absolute;
-    width: auto;
-    min-width: 100vw;    
-    height: auto;
-    display: none;
-    animation: image-appear 1s ease-in-out;
-}
+    width: 40%;
+
+    min-width: 250px;
+    max-height: 162px;
     
-.movie.render{
-    display: block;
-    animation: image-appear 1s ease-in-out;
+    }
+
+
 
 }
-.movie.render.disappear{
-    animation: image-disappear 1s ease-out;
-}
+
 
 .header__menu{
     display: flex;
@@ -93,25 +60,88 @@
     border-radius: 10px;
     font-size:clamp(1.5rem, 2vw, 1.7rem);
 
- 
+    & li{
+        margin: 2.5vh 1.5vw;
+        & a {
+            color:whitesmoke;
+            text-decoration: none;
+         
+        }
+        
+    }
+     
 
 }
 }
 
-.header__menu--submenu li a {
-    color:whitesmoke;
-    text-decoration: none;
- 
-}
-.header__menu--submenu li{
-    margin: 2.5vh 1.5vw;
-}
 .header__menu:hover ul, ul:hover,.header__menu:active ul, ul:active{
     text-align: right;
 
     display: block;
 
     }
+
+.header__nav{
+    z-index: 1;
+
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    font-family: 'Bebas Neue', cursive;
+
+        align-items: center;
+        
+        display: flex;
+      
+    
+    width: 2vw;
+    height: 2vw;
+    min-height: 50px;
+    min-width: 50px;
+   
+    margin: 2vw;
+
+
+    &--a{
+        color: red;
+        font-size:clamp(2rem, 7vw, 10rem);
+        
+        }
+    &--lejandro{
+
+        font-size:clamp(2rem, 7vw, 8rem);
+    }
+    
+    
+    &--tv{
+        color: red;
+        font-size:clamp(2rem, 7vw, 9rem);
+        }
+}
+
+
+.movie{
+    z-index: 0;
+    position: absolute;
+    width: auto;
+    min-width: 100vw;    
+    height: auto;
+    display: none;
+    animation: image-appear 1s ease-in-out;
+}
+    
+.movie.render{
+    display: block;
+    animation: image-appear 1s ease-in-out;
+
+}
+.movie.render.disappear{
+    animation: image-disappear 1s ease-out;
+}
 
 
 
@@ -153,67 +183,6 @@
 
 }
 
-@keyframes image-appear{
-    to{
-        opacity: 1;
-    }
-    from{
-        opacity: 0;
-    }
-}
-
-@keyframes image-disappear{
-    to{
-        opacity: 0;
-    }
-    from{
-        opacity: 1;
-    }
-}
-
-.presentation{
-    display: flex;
-    margin-top: 10vw;
-    width: 100%;
-    min-height: 160px;
-
-    &__text{
-
-    font-size:clamp(1.5rem, 2vw, 1.7rem);
-
-    position: absolute;
-    height: 30vw;
-
-    width: 40%;
-    min-width: 250px;
-    max-height: 162px;
-    }
-
-}
-@media screen and (max-width: 670px){
-    
-
-    .presentation {
-        position:relative;
-        -webkit-box-align:center;
-    -webkit-box-pack:center;
-    display:-webkit-box;
-
-    
-    &__text {
-        align-self: flex-end;
-        text-align: center;
-        width: 70%;
-    }
-    }
-}
-.presentation__text,.logo{
-    align-items: center;
-    
-    display: flex;
-  
-
-}
 
 
 
@@ -222,7 +191,7 @@
     position: relative;
     z-index: 2;
 
-width: 100%;
+    width: 100%;
 
 &__container{
 
@@ -279,6 +248,7 @@ width: 100%;
     padding: 10px;
     position: absolute;
 }
+
 .display .item__info{
     opacity: 1;
 
@@ -286,4 +256,45 @@ width: 100%;
 .carousel__container:hover~.container__item .item__info,.carousel__container:active~.container__item .item__info{
     transform:scale(1.4);
 
+}
+
+@keyframes image-appear{
+    to{
+        opacity: 1;
+    }
+    from{
+        opacity: 0;
+    }
+}
+
+@keyframes image-disappear{
+    to{
+        opacity: 0;
+    }
+    from{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 670px){
+    
+
+    .presentation {
+        display: flex;
+
+        position:relative;
+        -webkit-box-align:center;
+        -webkit-box-pack:center;
+         display:-webkit-box;
+         top: 50vh;
+         justify-content: center;
+
+        &__text {
+
+            text-align: center;
+            width: 70%;
+
+        }
+    }
+    
 }
