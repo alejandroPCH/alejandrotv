@@ -73,7 +73,7 @@ main {
   background-position: center;
 }
 
-.movie__button .Icon .Pause {
+.movie__button .Icon.Pause {
   background-image: url(../assets/icons/pause.svg);
   background-repeat: no-repeat;
   background-position: center;
