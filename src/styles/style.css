@@ -46,6 +46,53 @@ main {
   height: 100%;
 }
 
+.movie__button {
+  display: none;
+  position: absolute;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  width: 150px;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.movie__button .Icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+.movie__button .Icon.Play {
+  background-image: url(../assets/icons/play.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.movie__button .Icon .Pause {
+  background-image: url(../assets/icons/pause.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.movie__button:hover {
+  background-color: gainsboro;
+}
+
+.movie__button:active {
+  background-color: #b3b3b3;
+}
+
+.movie__button.displayButton {
+  display: block;
+  -webkit-animation: image-appear 1s ease-in-out;
+          animation: image-appear 1s ease-in-out;
+}
+
 .logo {
   width: 2vw;
   height: 2vw;
@@ -104,20 +151,6 @@ main {
           animation: image-disappear 1s ease-out;
 }
 
-.movie__button {
-  display: none;
-  position: absolute;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.movie__button.displayButton {
-  display: block;
-  -webkit-animation: image-appear 1s ease-in-out;
-          animation: image-appear 1s ease-in-out;
-}
-
 .header__menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -128,7 +161,7 @@ main {
 }
 
 .header__menu--photo {
-  background-image: url(../assets/icon/user-icon.png);
+  background-image: url(../assets/icons/user-icon.png);
   width: 3vw;
   height: 3vw;
   min-height: 30px;

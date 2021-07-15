@@ -5,6 +5,9 @@ const item=document.querySelector(".carousel__container")
 const text=document.querySelector(".presentation-text__item")
 const main_image:HTMLElement=document.querySelector(".main_image")
 const button:HTMLElement=document.querySelector('.movie__button')
+const buttonPlayOrPause:HTMLElement=document.querySelector('.Icon')
+const buttonTextPlayOrPause:HTMLElement=document.querySelector('.Text')
+
 const video=document.querySelector('video')
 
 const title:any=document.getElementsByTagName("title");
@@ -25,11 +28,6 @@ setTimeout(()=>{
                 video.classList.add('disappear'),
                 main_image.classList.remove('remove')
                 )
-
-//main image appear 
-//video disappear
-
-
 
   }
 )
@@ -58,6 +56,14 @@ button.onclick=()=>{
  player.media.muted ? player.muteControl() : player.control();
 }
 
+
+
+if(buttonPlayOrPause.classList.contains('Play')){
+  
+console.log("dsad")
+        
+
+}
 
 
 

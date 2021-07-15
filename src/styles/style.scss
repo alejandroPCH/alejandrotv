@@ -1,5 +1,5 @@
 @import "./global";
-
+@import "./button";
 
 
 .logo{
@@ -59,22 +59,13 @@
 .movie.render.disappear{
     animation: image-disappear 1s ease-out;
 }
-.movie__button{
-    display: none;
-    position: absolute;
-    height: fit-content;
-}
-.movie__button.displayButton{
-display: block;
-animation: image-appear 1s ease-in-out;
 
-}
 .header__menu{
     display: flex;
         align-items: center;
         
     &--photo{
-        background-image: url(../assets/icon/user-icon.png);
+        background-image: url(../assets/icons/user-icon.png);
         width: 3vw;
         height: 3vw;
         min-height: 30px;
