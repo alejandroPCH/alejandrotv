@@ -1,7 +1,7 @@
 import MediaPlayer from './mediaplayer' 
 import autoPlay from './plugins/autoPlay'
 import autoPause from './plugins/autoPause'
-const item=document.querySelector(".carousel__container")
+const item=document.querySelector(".container__item")
 const text=document.querySelector(".presentation-text__item")
 const main_image:HTMLElement=document.querySelector(".main_image")
 const button:HTMLElement=document.querySelector('.movie__button')

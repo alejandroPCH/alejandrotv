@@ -9,6 +9,7 @@ html {
   font-size: 62.5%;
   color: whitesmoke;
   overflow-x: hidden;
+  font-family: Helvetica,Arial, sans-serif;
 }
 
 body {
@@ -94,6 +95,7 @@ main {
 }
 
 .logo {
+  font-family: 'Bebas Neue', cursive;
   width: 2vw;
   height: 2vw;
   min-height: 50px;
@@ -203,7 +205,6 @@ main {
 }
 
 .search-box__input {
-  font-family: sans-serif;
   background: rgba(0, 0, 0, 0.7);
   border: 0.2vw solid rgba(97, 97, 97, 0.198);
   border-radius: 25px;
@@ -313,7 +314,6 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: 'Bebas Neue', cursive;
 }
 
 .carousel {
