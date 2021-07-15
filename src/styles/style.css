@@ -141,6 +141,10 @@ main {
     min-width: 250px;
     width: 70%;
   }
+  .presentation__image {
+    width: 65vw;
+    min-width: 200px;
+  }
 }
 
 .presentation {
@@ -169,6 +173,9 @@ main {
   position: relative;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  margin-bottom: 10vw;
+  width: 45vw;
+  min-width: 500px;
 }
 
 .header__menu {

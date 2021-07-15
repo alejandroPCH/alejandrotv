@@ -15,7 +15,7 @@ const title:any=document.getElementsByTagName("title");
 
 item.addEventListener('mouseover',grow_item)
 item.addEventListener('mouseout',remove_item)
-item.addEventListener('click', show_item)
+// item.addEventListener('click', show_item)
 
 
 
