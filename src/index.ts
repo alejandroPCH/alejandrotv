@@ -50,7 +50,11 @@ setTimeout(()=>{
 
 button.onclick=()=>{
 
-
+  show_item();
+  if(video.classList.contains('render') && player.media.muted===true){
+                                          player.media.muted=false
+                                          console.log("noooooo")
+                                            return}
  player.media.muted ? player.muteControl() : player.control();
 }
 
@@ -70,12 +74,12 @@ function removeMainImage():void {
 
  function grow_item(e){
 
-
+  if(video.classList.contains('render'))return
+  if(main_image.style.backgroundImage)return
   
   item.classList.add('display')
 
-  if(video.classList.contains('render'))return
-
+  
   
   let style= e.target.currentStyle || window.getComputedStyle(e.target,null),
   bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
