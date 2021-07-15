@@ -52,6 +52,7 @@ button.onclick=()=>{
 
 
   show_item();
+
   if(video.classList.contains('render') && player.media.muted===true){
                                           
     player.media.muted=false
@@ -84,6 +85,7 @@ console.log("dsad")
  function show_item(){
 
   video.classList.add('render')
+  main_image.classList.add('remove')
 }
 
 
