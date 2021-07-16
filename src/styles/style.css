@@ -124,6 +124,7 @@ main {
       -ms-flex-align: end;
           align-items: flex-end;
   height: 40vh;
+  line-height: 2.5rem;
 }
 
 .presentation__container {
@@ -154,7 +155,11 @@ main {
   position: relative;
   -webkit-animation: image-appear 0.5s ease-in-out;
           animation: image-appear 0.5s ease-in-out;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .presentation__intro--text {
@@ -416,6 +421,7 @@ main {
   }
   .presentation__container {
     position: relative;
+    text-align: center;
     display: none;
   }
   .presentation__container--text {

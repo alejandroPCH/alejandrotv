@@ -9,7 +9,7 @@
     min-height: 360px;
     align-items: flex-end;
     height: 40vh;
-
+    line-height: 2.5rem;
     &__container{
         position: relative;
         animation: image-appear 0.5s ease-in-out;
@@ -39,7 +39,8 @@
     &__intro{
         position: relative;
         animation: image-appear 0.5s ease-in-out;
-        display: block;
+        display: flex;
+        align-self: center;
 
     &--text{
     
@@ -300,6 +301,8 @@
 
      &__container{
          position: relative;
+         text-align: center;
+        
         display: none;
         
         &--text {

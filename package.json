@@ -1,7 +1,7 @@
 {
   "name": "alejandro-tv",
   "version": "1.0.0",
-  "description": "Alejandro TV it's a platform were my favorites my best short film is saved  ",
+  "description": "AlejandroTV is a platform where my favorite short film is saved.",
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
