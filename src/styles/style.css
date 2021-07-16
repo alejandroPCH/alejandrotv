@@ -238,6 +238,7 @@ main {
   position: absolute;
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
+  background-image: url("../assets/images/bb-8.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -415,12 +416,9 @@ main {
   }
   .presentation__container {
     position: relative;
-    display: contents !important;
+    display: none;
   }
   .presentation__container--text {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     text-align: center;
     min-width: 200px;
     width: 100%;

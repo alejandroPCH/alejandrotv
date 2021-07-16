@@ -125,11 +125,10 @@
 }
 
 
-
-
 .main_image{
     position: absolute;
     filter: brightness(50%);
+    background-image: url('../assets/images/bb-8.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
@@ -294,17 +293,16 @@
         position:relative;
         -webkit-box-align:center;
         -webkit-box-pack:center;
-         display:-webkit-box;
-         top: 35vh;
-         justify-content: center;
+        display:-webkit-box;
+        top: 35vh;
+        justify-content: center;
+        flex-direction: column;
 
-         flex-direction: column;
      &__container{
          position: relative;
-        display: contents !important;
+        display: none;
         
         &--text {
-            display: flex;
             text-align: center;
             min-width: 200px;
             width: 100%;
