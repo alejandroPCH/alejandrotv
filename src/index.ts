@@ -1,24 +1,22 @@
 import MediaPlayer from './mediaplayer' 
 import autoPlay from './plugins/autoPlay'
 import autoPause from './plugins/autoPause'
+import grow_item from './utils/growItem'
+import iconsManager from './utils/iconsManager'
+export const buttonPlayOrPause:HTMLElement=document.querySelector('.presentation__button--icon')
+export const item=document.querySelector(".container__item")
+export const main_image:HTMLElement=document.querySelector(".main_image")
+export const button:HTMLElement=document.querySelector('.presentation__button')
+export const presentationContainer:HTMLElement=document.querySelector(".presentation__container")
+export const playOrPause=buttonPlayOrPause.classList;
+export const video=document.querySelector('video')
 
 const presentationText:HTMLElement=document.querySelector(".presentation__container--text")
 const presentationImage=document.querySelector(".presentation__container--image")
 
-const presentationTextIntro:HTMLElement=document.querySelector(".presentation__intro--text")
 
-const item=document.querySelector(".container__item")
 
-const presentationContainer:HTMLElement=document.querySelector(".presentation__container")
 
-const main_image:HTMLElement=document.querySelector(".main_image")
-const button:HTMLElement=document.querySelector('.presentation__button')
-const buttonPlayOrPause:HTMLElement=document.querySelector('.presentation__button--icon')
-const playOrPause=buttonPlayOrPause.classList;
-
-const presentationButtonIcon:HTMLElement=document.querySelector('.presentation__button--icon.State')
-
-const video=document.querySelector('video')
 
 const title:any=document.getElementsByTagName("title");
 
@@ -34,13 +32,8 @@ function show_item(){
   video.classList.add('render')
 }
 
-function presentation__container__disappear(){
 
-  setTimeout(() =>{presentationContainer.style.display = 'none'},500,presentationContainer.classList.add('disappear'))
-
-}
-
-function presentation__container__appear(){
+export function presentation__container__appear(){
 
   setTimeout(() =>{presentationContainer.style.display = 'block'},0,  presentationContainer.classList.remove('disappear'))
 
@@ -50,41 +43,6 @@ function presentation__container__appear(){
 
 
 
-function removeMainImage():void {
-  main_image.classList.add("remove")
-
-}
-
- function grow_item(e){
-
-  
-  if(video.classList.contains('render'))return
-  if(main_image.style.backgroundImage)return
-
-  item.classList.add('display')
-
-  //this will render once
-
-  let style= e.target.currentStyle || window.getComputedStyle(e.target,null),
-  bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-  
-   main_image.style.backgroundImage=`url(${bi})`
-   
-  main_image.style.animation = 'none';
-  main_image.offsetHeight; /* trigger reflow */
-  main_image.style.animation = null; 
-
-  button.classList.add("displayButton")
-  setTimeout(()=>{
-  
-    video.classList.add('render');
-    removeMainImage()} ,3000)
-    presentationTextIntro.style.display='none'
-  presentation__container__appear()
-    
-    
-
-}
 
 function remove_item(){
   document.querySelector(".container__item").classList.remove('display')
@@ -119,7 +77,7 @@ setTimeout(()=>{
 
   //el:video contains the original video
 
-  const player=new MediaPlayer({
+ export const player=new MediaPlayer({
     
     //all of these are elements of the MediaPlayer, also they are hosted in mediaplayer.js file
 
@@ -130,50 +88,13 @@ setTimeout(()=>{
     plugins:[new autoPlay(), new autoPause(title)] 
 
   })
-  console.log(presentationButtonIcon)               
 button.onclick=()=>{
 
 
 
   show_item();
 
-  if(video.classList.contains('render') && player.media.muted===true){
-  
-    
-    
-    presentation__container__disappear()
-      
-  
-    presentationButtonIcon.classList.remove('Mute')
-    presentationButtonIcon.classList.add('unMute')
-    playOrPause.remove('Play')
-    playOrPause.add('Pause')
-
-
-    player.media.muted=false
-    return
-  }
-
-  if(playOrPause.contains('Play')){
-     
-      playOrPause.remove('Play')
-      playOrPause.add('Pause')
-   
-     
-
-      presentation__container__disappear()
-
-      
-    }else{
-   
-      playOrPause.remove('Pause')
-      playOrPause.add('Play')
- 
-      presentation__container__appear()
-      
-    
-      console.log("dsadsadsadsa")
-    }
+ iconsManager()
 
 
  player.media.muted ? player.muteControl() : player.control();
@@ -182,7 +103,6 @@ button.onclick=()=>{
 
 
 }
-
 
 
 // if the navigator uses "Service Worker" then it will use it

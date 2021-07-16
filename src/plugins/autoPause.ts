@@ -1,5 +1,5 @@
 import MediaPlayer from '../mediaplayer'
-
+import {presentation__container__appear,playOrPause} from '../index'
 class autoPause{
     
     private threshold:number
@@ -45,12 +45,10 @@ class autoPause{
         
         this.title[0].innerHTML="AlejandroTV"
 
-        //quieres que cuando el usario de al boton de pause se respete su decision
         
       
 
         if(this.insideThreshold && !this.pauseByVisibility ){
-            console.log("solo")
 
             this.player.play()
             //by assigning false it will respect the user interaction 
@@ -62,7 +60,14 @@ class autoPause{
        
         this.pauseByVisibility=true
         this.player.pause() 
-       
+        console.log(this.player.media)
+
+        if(this.player.media.classList.contains('render')){
+            presentation__container__appear()
+            playOrPause.remove('Pause')
+            playOrPause.add('Play')
+    
+        }
         }
 
         
@@ -83,6 +88,7 @@ class autoPause{
             
             this.insideThreshold=false
             this.player.pause()
+          
 
     }
     }
