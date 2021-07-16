@@ -9,33 +9,11 @@
     min-height: 360px;
     align-items: flex-end;
     height: 40vh;
-    line-height: 2.9rem;
-    font-size: clamp(1.3rem, 2vw, 2rem);
-    &__container{
-        position: relative;
-        animation: image-appear 0.5s ease-in-out;
-        display:none;
-        
+    line-height: clamp(1.9rem,5vw,3rem);
+    font-size: clamp(1.4rem, 1.5vw, 2rem);
 
-    &--text{
     
-        height: 30vw;
-        font-weight: 700;
-    
-        width: clamp(45rem, 40vw, 70rem);
-    
-    
-        min-width: 250px;
-        max-height: 162px;
-        
-        }
-        &--image{
-        margin-bottom: 4rem;
-        align-self: flex-start;
-        width: 35vw;
-        min-width: 500px;
-        }
-    }
+
     &__intro{
         position: relative;
         animation: image-appear 0.5s ease-in-out;
@@ -47,15 +25,43 @@
         height: 30vw;
         font-weight: 700;
     
-        width: clamp(45rem, 40vw, 70rem);
-    
+        margin-top: 10rem;
     
         min-width: 250px;
         max-height: 162px;
+        width: clamp(45rem, 40vw, 70rem);
         
         }
       
     }
+   
+   
+   
+    &__container{
+        position: relative;
+        animation: image-appear 0.5s ease-in-out;
+        display:none;
+        
+
+    &--text{
+    
+        height: 30vw;
+        font-weight: 700;
+    
+        width: clamp(55rem, 57vw,80rem);
+    
+    
+        max-height: 162px;
+        
+        }
+        &--image{
+        margin-bottom: 4rem;
+        align-self: flex-start;
+        width: 35vw;
+        min-width: 500px;
+        }
+    }
+    
 
 }
 
@@ -256,17 +262,14 @@
 
             margin-bottom: 30rem;
             margin-top: 7rem;
-      
-    }
+         }
 
-    
-
-     .container__item{
-        min-height: 170px;
-        min-width: 250px;
-        width: 50vw;
-        height: 30vh;
-        margin-top: 5vh;
+        .container__item{
+            min-height: 170px;
+            min-width: 250px;
+            width: 50vw;
+            height: 30vh;
+            margin-top: 5vh;
         }
     }
 
@@ -285,7 +288,7 @@
 
     .presentation__button{
         position: absolute;
-        top: clamp(32rem, 45vh, 35rem);
+        top: clamp(31rem, 45vw, 35rem);
     }
     .presentation {
         display: flex;
@@ -298,18 +301,29 @@
         flex-direction: column;
 
      &__container{
-         position: relative;
-         text-align: center;
-        
         display: none;
+        text-align: center;
+        position: relative;
+        
         
         &--text {
-            text-align: center;
-            min-width: 200px;
-            width: 100%;
+
+            align-items: center;
+            display: -webkit-box;
+            height:auto;
+
             padding: 0 7vw;
             position: relative;
-            align-items: center;
+
+            min-width: 200px;
+            text-align: center;
+
+            overflow: hidden;
+
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            width: 100%;
+
             }
         &--image{
             width: 65vw;
@@ -323,7 +337,7 @@
         text-align: center;
         &--text {
             text-align: center;
-            min-width: 200px;
+            min-width: 270px;
             width: 100%;
             padding: 0 7vw;
             position: relative;
@@ -334,3 +348,5 @@
   }
     
 }
+
+
