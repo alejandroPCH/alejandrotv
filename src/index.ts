@@ -33,11 +33,12 @@ function show_item(){
 }
 
 
-export function presentation__container__appear(){
+export function presentation__container__appear(firstTime=false){
+   if(firstTime){presentationContainer.style.display = 'block'}
 
+  if(presentationContainer.classList.contains('disappear') || presentationContainer.style.display==='none' ){
   setTimeout(() =>{presentationContainer.style.display = 'block'},0,  presentationContainer.classList.remove('disappear'))
-
-
+}
 }
 
 

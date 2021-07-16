@@ -6,8 +6,12 @@ const presentationButtonIcon:HTMLElement=document.querySelector('.presentation__
 
 function presentation__container__disappear(){
 
-    setTimeout(() =>{presentationContainer.style.display = 'none'},500,presentationContainer.classList.add('disappear'))
-  
+ 
+
+  if(presentationContainer.classList.contains('disappear')!=true || presentationContainer.style.display != 'none'){
+  setTimeout(() =>{presentationContainer.style.display = 'none'},500,presentationContainer.classList.add('disappear'))
+console.log("PUASEEEE")  
+}
   }
   
 function iconsManager(){
@@ -32,14 +36,13 @@ function iconsManager(){
      
       playOrPause.remove('Play')
       playOrPause.add('Pause')
-      console.log("deberia desaparecer")
    
      
 
       presentation__container__disappear()
 
       
-    }else{
+    }else if(playOrPause.contains('Pause')){
       playOrPause.remove('Pause')
       playOrPause.add('Play')
  

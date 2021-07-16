@@ -332,11 +332,6 @@ main {
   opacity: 1;
 }
 
-.carousel__container:hover ~ .container__item .item__info, .carousel__container:active ~ .container__item .item__info {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
-}
-
 @-webkit-keyframes image-appear {
   to {
     opacity: 1;

@@ -60,7 +60,6 @@ class autoPause{
        
         this.pauseByVisibility=true
         this.player.pause() 
-        console.log(this.player.media)
 
         if(this.player.media.classList.contains('render')){
             presentation__container__appear()

@@ -39,7 +39,7 @@ function removeMainImage():void {
                       removeMainImage()} ,3000)
   
       presentationTextIntro.style.display='none'
-      presentation__container__appear()
+      presentation__container__appear(true)
       
   }
   export default grow_item
