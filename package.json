@@ -10,7 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alejandropch/alejandrotv.git"
+    "url": "git+https://github.com/alejandropch/alejandrotv.git",
+    "build": "cross-env NODE_ENV=production parcel build ./index.html --public-url .",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "JavaScript",
@@ -22,6 +24,7 @@
     "url": "https://github.com/alejandropch/alejandrotv/issues"
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "parcel-bundler": "^1.12.5",
     "ts-loader": "^9.2.2",
     "typescript": "^4.3.2"
