@@ -10,7 +10,6 @@ function presentation__container__disappear(){
 
   if(presentationContainer.classList.contains('disappear')!=true || presentationContainer.style.display != 'none'){
   setTimeout(() =>{presentationContainer.style.display = 'none'},500,presentationContainer.classList.add('disappear'))
-console.log("PUASEEEE")  
 }
   }
   

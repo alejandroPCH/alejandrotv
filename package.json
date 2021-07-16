@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/alejandropch/alejandrotv#readme",
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "parcel-bundler": "^1.12.5",
     "ts-loader": "^9.2.2",
     "typescript": "^4.3.2"
