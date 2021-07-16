@@ -58,9 +58,8 @@ class MediaPlayer {
   }
 
   control() {
-
-
-    this.media.paused ? this.play() : this.pause();
+    console.log(this.media.muted)
+    if(this.media.muted==false)this.media.paused ? this.play() : this.pause();
 
 
   }

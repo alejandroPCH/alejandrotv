@@ -10,7 +10,7 @@ export const button:HTMLElement=document.querySelector('.presentation__button')
 export const presentationContainer:HTMLElement=document.querySelector(".presentation__container")
 export const playOrPause=buttonPlayOrPause.classList;
 export const video=document.querySelector('video')
-
+export let firstTimeVideoRender:Boolean=false;
 const presentationText:HTMLElement=document.querySelector(".presentation__container--text")
 const presentationImage=document.querySelector(".presentation__container--image")
 
@@ -57,8 +57,7 @@ video.addEventListener('ended',()=>{
   
   playOrPause.remove('Pause')
 
-  presentationImage.classList.remove('disappear')
-  presentationText.classList.remove('disappear')
+  presentation__container__appear()
 
   playOrPause.add('Play')
 
@@ -95,10 +94,9 @@ button.onclick=()=>{
 
   show_item();
 
- iconsManager()
 
-
- player.media.muted ? player.muteControl() : player.control();
+  iconsManager()
+  player.media.muted ? player.muteControl() : player.control();
 
 
 

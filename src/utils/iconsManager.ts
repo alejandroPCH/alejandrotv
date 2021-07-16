@@ -16,9 +16,7 @@ function presentation__container__disappear(){
 function iconsManager(){
 
     if(video.classList.contains('render') && player.media.muted===true){
-  
         presentation__container__disappear()
-        if(player.media.paused)player.media.play()
     
         presentationButtonIcon.classList.remove('Mute')
         presentationButtonIcon.classList.add('unMute')
@@ -27,7 +25,6 @@ function iconsManager(){
 
         
 
-        player.media.muted=false
         return
   }
 
