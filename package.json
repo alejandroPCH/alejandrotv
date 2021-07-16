@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "AlejandroTV is a platform where my favorite short film is saved.",
   "main": "src/index.ts",
+  "homepage": "https://alejandropch.github.io/alejandrotv/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -22,9 +21,7 @@
   "bugs": {
     "url": "https://github.com/alejandropch/alejandrotv/issues"
   },
-  "homepage": "https://github.com/alejandropch/alejandrotv#readme",
   "devDependencies": {
-    "gh-pages": "^3.2.3",
     "parcel-bundler": "^1.12.5",
     "ts-loader": "^9.2.2",
     "typescript": "^4.3.2"
