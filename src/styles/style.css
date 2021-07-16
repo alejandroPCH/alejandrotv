@@ -438,5 +438,19 @@ main {
     width: 65vw;
     min-width: 200px;
   }
+  .presentation__intro {
+    position: relative;
+    text-align: center;
+  }
+  .presentation__intro--text {
+    text-align: center;
+    min-width: 200px;
+    width: 100%;
+    padding: 0 7vw;
+    position: relative;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -319,7 +319,21 @@
             }
     
     }
-         
+    
+    &__intro{
+        position: relative;
+        text-align: center;
+        &--text {
+            text-align: center;
+            min-width: 200px;
+            width: 100%;
+            padding: 0 7vw;
+            position: relative;
+            align-items: center;
+
+        }
+        
+    }
 
 
 
