@@ -1,4 +1,4 @@
-.movie__button{
+.presentation__button{
     display: none;
     position: absolute;
     height: fit-content;
@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
 
- .Icon{
+ .presentation__button--icon{
     width:25px;
      height: 25px;
      display:inline-block;
@@ -47,13 +47,13 @@
 
 
 }
-.movie__button:hover{
+.presentation__button:hover{
     background-color: rgb(220, 220, 220);
     }
-    .movie__button:active{
+    .presentation__button:active{
         background-color: rgb(179, 179, 179);
         }
-.movie__button.displayButton{
+.presentation__button.displayButton{
 animation: image-appear 1s ease-in-out;
 display: flex;
 

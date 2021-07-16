@@ -47,7 +47,7 @@ main {
   height: 100%;
 }
 
-.movie__button {
+.presentation__button {
   display: none;
   position: absolute;
   height: -webkit-fit-content;
@@ -68,25 +68,25 @@ main {
           align-items: center;
 }
 
-.movie__button .Icon {
+.presentation__button .presentation__button--icon {
   width: 25px;
   height: 25px;
   display: inline-block;
 }
 
-.movie__button .Icon.Play {
+.presentation__button .presentation__button--icon.Play {
   background-image: url(../assets/icons/play.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.movie__button .Icon.Pause {
+.presentation__button .presentation__button--icon.Pause {
   background-image: url(../assets/icons/pause.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.movie__button .Icon.State.Mute {
+.presentation__button .presentation__button--icon.State.Mute {
   background-image: url(../assets/icons/mute.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -94,19 +94,19 @@ main {
   margin-left: 1rem;
 }
 
-.movie__button .Icon.State.unMute {
+.presentation__button .presentation__button--icon.State.unMute {
   display: none;
 }
 
-.movie__button:hover {
+.presentation__button:hover {
   background-color: gainsboro;
 }
 
-.movie__button:active {
+.presentation__button:active {
   background-color: #b3b3b3;
 }
 
-.movie__button.displayButton {
+.presentation__button.displayButton {
   -webkit-animation: image-appear 1s ease-in-out;
           animation: image-appear 1s ease-in-out;
   display: -webkit-box;
@@ -128,36 +128,31 @@ main {
 
 .presentation__container {
   position: relative;
-  -webkit-animation: image-appear 1s ease-in-out;
-          animation: image-appear 1s ease-in-out;
+  -webkit-animation: image-appear 0.5s ease-in-out;
+          animation: image-appear 0.5s ease-in-out;
+  display: none;
 }
 
-.presentation__text {
+.presentation__container--text {
   height: 30vw;
   font-weight: 700;
   font-size: clamp(1.3rem, 2vw, 1.7rem);
-  position: relative;
   width: clamp(45rem, 40vw, 70rem);
-  -webkit-animation: image-appear 1s ease-in-out;
-          animation: image-appear 1s ease-in-out;
   min-width: 250px;
   max-height: 162px;
 }
 
-.presentation__image {
+.presentation__container--image {
   margin-bottom: 4rem;
-  position: relative;
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 35vw;
   min-width: 500px;
-  -webkit-animation: image-appear 1s ease-in-out;
-          animation: image-appear 1s ease-in-out;
 }
 
 .presentation__container.disappear {
-  -webkit-animation: image-disappear 1s ease-in-out;
-          animation: image-disappear 1s ease-in-out;
+  -webkit-animation: image-disappear 0.5s ease-in-out;
+          animation: image-disappear 0.5s ease-in-out;
 }
 
 .header__nav {
@@ -367,7 +362,7 @@ main {
     margin-bottom: 30rem;
     margin-top: 7rem;
   }
-  .carousel__container .container__item {
+  .carousel .container__item {
     min-height: 170px;
     min-width: 250px;
     width: 50vw;
@@ -383,9 +378,9 @@ main {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .movie__button {
+  .presentation__button {
     position: absolute;
-    top: clamp(35rem, 45vh, 35rem);
+    top: clamp(32rem, 45vh, 35rem);
   }
   .presentation {
     display: -ms-flexbox;
@@ -404,9 +399,9 @@ main {
   }
   .presentation__container {
     position: relative;
-    display: contents;
+    display: contents !important;
   }
-  .presentation__text {
+  .presentation__container--text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -419,7 +414,7 @@ main {
         -ms-flex-align: center;
             align-items: center;
   }
-  .presentation__image {
+  .presentation__container--image {
     width: 65vw;
     min-width: 200px;
   }
