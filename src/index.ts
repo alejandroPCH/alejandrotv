@@ -1,11 +1,15 @@
 import MediaPlayer from './mediaplayer' 
 import autoPlay from './plugins/autoPlay'
 import autoPause from './plugins/autoPause'
-const item=document.querySelector(".container__item")
-const presentationContainerText=document.querySelector(".presentation__container--text")
-const presentationContainerImage=document.querySelector(".presentation__container--image")
 
-const presentation__container:HTMLElement=document.querySelector(".presentation__container")
+const presentationText:HTMLElement=document.querySelector(".presentation__container--text")
+const presentationImage=document.querySelector(".presentation__container--image")
+
+const presentationTextIntro:HTMLElement=document.querySelector(".presentation__intro--text")
+
+const item=document.querySelector(".container__item")
+
+const presentationContainer:HTMLElement=document.querySelector(".presentation__container")
 
 const main_image:HTMLElement=document.querySelector(".main_image")
 const button:HTMLElement=document.querySelector('.presentation__button')
@@ -32,16 +36,17 @@ function show_item(){
 
 function presentation__container__disappear(){
 
-  setTimeout(() =>{presentation__container.style.display = 'none'},500,presentation__container.classList.add('disappear'))
+  setTimeout(() =>{presentationContainer.style.display = 'none'},500,presentationContainer.classList.add('disappear'))
 
 }
 
 function presentation__container__appear(){
 
-  setTimeout(() =>{presentation__container.style.display = 'block'},0,  presentation__container.classList.remove('disappear'))
+  setTimeout(() =>{presentationContainer.style.display = 'block'},0,  presentationContainer.classList.remove('disappear'))
 
 
 }
+
 
 
 
@@ -58,8 +63,8 @@ function removeMainImage():void {
 
   item.classList.add('display')
 
-  
-  
+  //this will render once
+
   let style= e.target.currentStyle || window.getComputedStyle(e.target,null),
   bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
   
@@ -74,7 +79,7 @@ function removeMainImage():void {
   
     video.classList.add('render');
     removeMainImage()} ,3000)
-
+    presentationTextIntro.style.display='none'
   presentation__container__appear()
     
     
@@ -93,8 +98,8 @@ video.addEventListener('ended',()=>{
   
   playOrPause.remove('Pause')
 
-  presentationContainerImage.classList.remove('disappear')
-  presentationContainerText.classList.remove('disappear')
+  presentationImage.classList.remove('disappear')
+  presentationText.classList.remove('disappear')
 
   playOrPause.add('Play')
 

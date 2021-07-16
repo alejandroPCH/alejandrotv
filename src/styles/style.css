@@ -150,6 +150,22 @@ main {
   min-width: 500px;
 }
 
+.presentation__intro {
+  position: relative;
+  -webkit-animation: image-appear 0.5s ease-in-out;
+          animation: image-appear 0.5s ease-in-out;
+  display: block;
+}
+
+.presentation__intro--text {
+  height: 30vw;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  width: clamp(45rem, 40vw, 70rem);
+  min-width: 250px;
+  max-height: 162px;
+}
+
 .presentation__container.disappear {
   -webkit-animation: image-disappear 0.5s ease-in-out;
           animation: image-disappear 0.5s ease-in-out;

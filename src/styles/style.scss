@@ -36,7 +36,26 @@
         min-width: 500px;
         }
     }
- 
+    &__intro{
+        position: relative;
+        animation: image-appear 0.5s ease-in-out;
+        display: block;
+
+    &--text{
+    
+        height: 30vw;
+        font-weight: 700;
+        font-size: clamp(1.3rem, 2vw, 1.7rem);
+    
+        width: clamp(45rem, 40vw, 70rem);
+    
+    
+        min-width: 250px;
+        max-height: 162px;
+        
+        }
+      
+    }
 
 }
 
