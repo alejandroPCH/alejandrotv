@@ -210,7 +210,7 @@ var autoPause =
 function () {
   function autoPause(title) {
     this.pauseByVisibility = false;
-    this.threshold = 0.10;
+    this.threshold = 0.15;
     this.handlerIntersection = this.handlerIntersection.bind(this);
     this.handleVisibility = this.handleVisibility.bind(this);
     this.title = title;
@@ -287,13 +287,20 @@ function removeMainImage() {
 }
 
 function grow_item(e) {
+  var gradient = 'linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(255,255,255,0) 100%)';
   if (index_1.video.classList.contains('render')) return;
   if (index_1.main_image.style.backgroundImage) return;
-  index_1.item.classList.add('display'); //this will render once
 
-  var style = e.target.currentStyle || window.getComputedStyle(e.target, null),
-      bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-  index_1.main_image.style.backgroundImage = "linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(255,255,255,0) 100%), url(" + bi + ")";
+  if (e.target.classList.contains("presentation")) {
+    index_1.main_image.style.backgroundImage = gradient + ", url(" + window.getComputedStyle(document.querySelector(".container__item")).backgroundImage.slice(4, -1).replace(/"/g, "") + ")";
+  } else {
+    index_1.item.classList.add('display'); //this will render once
+
+    var style = e.target.currentStyle || window.getComputedStyle(e.target, null),
+        bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    index_1.main_image.style.backgroundImage = gradient + ", url(" + bi + ")";
+  }
+
   index_1.main_image.style.animation = 'none';
   index_1.main_image.offsetHeight;
   /* trigger reflow */
@@ -382,14 +389,18 @@ exports.presentationContainer = document.querySelector(".presentation__container
 exports.playOrPause = exports.buttonPlayOrPause.classList;
 exports.video = document.querySelector('video');
 exports.firstTimeVideoRender = false;
+var header = document.querySelector('header');
 var title = document.getElementsByTagName("title");
 exports.item.addEventListener('mouseover', growItem_1.default);
 exports.item.addEventListener('mouseout', remove_item);
 exports.item.addEventListener('click', show_item);
+header.addEventListener('click', growItem_1.default);
 
 function show_item() {
   exports.video.classList.add('render');
 }
+
+console.log("now with button ");
 
 function presentation__container__appear(firstTime) {
   if (firstTime === void 0) {
@@ -436,6 +447,12 @@ exports.button.onclick = function () {
   show_item();
   iconsManager_1.default();
   exports.player.media.muted ? exports.player.muteControl() : exports.player.control();
+};
+
+exports.video.onclick = function () {
+  show_item();
+  iconsManager_1.default();
+  exports.player.media.muted ? exports.player.muteControl() : exports.player.control();
 }; // if the navigator uses "Service Worker" then it will use it
 
 
@@ -472,7 +489,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44723" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36939" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
