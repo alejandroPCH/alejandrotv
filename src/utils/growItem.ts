@@ -1,13 +1,9 @@
-import { main_image,video,item,button,presentation__container__appear } from "../index"
+import { main_image,video,item,button,presentation__container__appear, removeMainImage} from "../index"
 
 const presentationTextIntro:HTMLElement=document.querySelector(".presentation__intro--text")
 
 
-function removeMainImage():void {
-  setTimeout(()=>{main_image.style.visibility='hidden' } ,1000,  main_image.classList.add("remove"))
-  
-  
-  }
+
   
   
 
@@ -19,8 +15,7 @@ function removeMainImage():void {
   if(main_image.style.backgroundImage)return
   
 
-  if(e.target.classList.contains("presentation")){
-
+  if(e.target.classList.contains("presentation") ||e.target.classList.contains("main_image")){
     main_image.style.backgroundImage=`${gradient}, url(${window.getComputedStyle(document.querySelector(".container__item")).backgroundImage.slice(4, -1).replace(/"/g, "")})`
    
   }else{

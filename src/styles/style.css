@@ -267,7 +267,6 @@ main {
 .carousel {
   position: relative;
   z-index: 2;
-  margin-top: 2rem;
   overflow-y: hidden;
   height: 20vw;
   display: -webkit-box;
@@ -392,15 +391,11 @@ main {
     margin-top: 15vw;
     min-height: 30rem;
   }
-  .carousel__container {
-    margin-top: 5vw;
-  }
   .carousel .container__item {
     min-height: 170px;
     min-width: 250px;
     width: 70vw;
     height: 30vh;
-    margin-top: 5vh;
   }
   .container__item:hover, .container__item:active {
     -webkit-transform: scale(1.1);

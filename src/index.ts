@@ -11,10 +11,10 @@ export const presentationContainer:HTMLElement=document.querySelector(".presenta
 export const playOrPause=buttonPlayOrPause.classList;
 export const video=document.querySelector('video')
 export let firstTimeVideoRender:Boolean=false;
+const presentationButtonIcon:HTMLElement=document.querySelector('.presentation__button--icon.State')
 
-const header:HTMLElement=document.querySelector('header')
 
-
+console.log("sssss")
 
 
 
@@ -27,15 +27,25 @@ item.addEventListener('mouseover',grow_item)
 item.addEventListener('mouseout',remove_item)
 item.addEventListener('click', show_item)
 
-header.addEventListener('click',grow_item)
+main_image.addEventListener('click',grow_item)
 
 
 function show_item(){
 
   video.classList.add('render')
+  console.log(main_image.classList.contains('remove'))
+  if(main_image.classList.contains('remove')==false){
+    removeMainImage()
+    if(player.media.muted===true){ presentationButtonIcon.classList.add('Mute') 
+    return
+                 }}
 }
 
-
+export function removeMainImage():void {
+  setTimeout(()=>{main_image.style.visibility='hidden' } ,1000,   main_image.classList.add("remove"))
+  
+  
+  }
 
 export function presentation__container__appear(firstTime=false){
    if(firstTime){presentationContainer.style.display = 'block'}
@@ -47,39 +57,36 @@ export function presentation__container__appear(firstTime=false){
 
 
 
-
-
 function remove_item(){
   document.querySelector(".container__item").classList.remove('display')
   
 }
-console.log("again2")
+
 
 video.addEventListener('ended',()=>{
   
-  player.media.muted =true
-  
-  playOrPause.remove('Pause')
+    player.media.muted =true
+    
+    playOrPause.remove('Pause')
 
-  presentation__container__appear()
+    presentation__container__appear()
 
-  playOrPause.add('Play')
+    playOrPause.add('Play')
 
-setTimeout(()=>{ 
-                video.classList.remove('disappear')
-                video.classList.remove('render')
-                
-             
+  setTimeout(()=>{ 
+                  video.classList.remove('disappear')
+                  video.classList.remove('render')
+                  
               
-              },1000,
-                video.classList.add('disappear'),
-                main_image.classList.remove('remove'),
-                main_image.style.visibility='visible'
+                
+                },1000,
+                  video.classList.add('disappear'),
+                  main_image.classList.remove('remove'),
+                  main_image.style.visibility='visible'
 
-                )
-
-  }
-)
+                  )
+                
+    })
 
   //el:video contains the original video
 
