@@ -28,7 +28,7 @@
 
     .presentation__button{
         position: absolute;
-        top: clamp(31rem, 45vw, 35rem);
+        top: clamp(31rem, 54vw, 35rem);
     }
     .presentation {
         display: flex;
@@ -39,7 +39,7 @@
         top: 35vh;
         justify-content: center;
         flex-direction: column;
-
+        width: 100%;
      &__container{
         display: none;
         text-align: center;

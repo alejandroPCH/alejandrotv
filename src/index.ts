@@ -3,6 +3,7 @@ import autoPlay from './plugins/autoPlay'
 import autoPause from './plugins/autoPause'
 import grow_item from './utils/growItem'
 import iconsManager from './utils/iconsManager'
+
 export const buttonPlayOrPause:HTMLElement=document.querySelector('.presentation__button--icon')
 export const item=document.querySelector(".container__item")
 export const main_image:HTMLElement=document.querySelector(".main_image")
@@ -14,7 +15,6 @@ export let firstTimeVideoRender:Boolean=false;
 const presentationButtonIcon:HTMLElement=document.querySelector('.presentation__button--icon.State')
 
 
-console.log("sssss")
 
 
 
@@ -24,22 +24,11 @@ const title:any=document.getElementsByTagName("title");
 
 
 item.addEventListener('mouseover',grow_item)
-item.addEventListener('mouseout',remove_item)
+item.addEventListener('mouseout',reduce_item)
 item.addEventListener('click', show_item)
 
 main_image.addEventListener('click',grow_item)
 
-
-function show_item(){
-
-  video.classList.add('render')
-  console.log(main_image.classList.contains('remove'))
-  if(main_image.classList.contains('remove')==false){
-    removeMainImage()
-    if(player.media.muted===true){ presentationButtonIcon.classList.add('Mute') 
-    return
-                 }}
-}
 
 export function removeMainImage():void {
   setTimeout(()=>{main_image.style.visibility='hidden' } ,1000,   main_image.classList.add("remove"))
@@ -56,12 +45,24 @@ export function presentation__container__appear(firstTime=false){
 }
 
 
+function show_item(){
 
-function remove_item(){
+  video.classList.add('render')
+  if(main_image.classList.contains('remove')==false){
+    removeMainImage()
+    if(player.media.muted===true){ presentationButtonIcon.classList.add('Mute') 
+    return
+                 }}
+}
+// make the element selected smaller
+function reduce_item(){
   document.querySelector(".container__item").classList.remove('display')
   
 }
 
+
+
+//when video ends
 
 video.addEventListener('ended',()=>{
   

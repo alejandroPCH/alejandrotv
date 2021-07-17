@@ -17,6 +17,7 @@ function iconsManager(){
 
   //this will just run once 
     if(video.classList.contains('render') && player.media.muted===true){
+        
         presentation__container__disappear()
         removeMainImage()
         
@@ -25,7 +26,6 @@ function iconsManager(){
         playOrPause.remove('Play')
         playOrPause.add('Pause')
 
-        
 
         return
   }

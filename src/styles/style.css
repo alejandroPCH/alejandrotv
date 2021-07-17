@@ -159,7 +159,7 @@ main {
 .presentation__container--text {
   height: 30vw;
   font-weight: 700;
-  width: clamp(55rem, 57vw, 80rem);
+  width: clamp(65rem, 57vw, 80rem);
   max-height: 162px;
 }
 
@@ -407,7 +407,7 @@ main {
   }
   .presentation__button {
     position: absolute;
-    top: clamp(31rem, 45vw, 35rem);
+    top: clamp(31rem, 54vw, 35rem);
   }
   .presentation {
     display: -ms-flexbox;
@@ -423,6 +423,7 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
   .presentation__container {
     display: none;
