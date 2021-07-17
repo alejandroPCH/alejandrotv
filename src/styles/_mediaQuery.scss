@@ -6,10 +6,12 @@
         min-height: 30rem;
      
         .container__item{
-            min-height: 170px;
+            min-height: 200px;
             min-width: 250px;
-            width: 70vw;
+            width: 55vw;
             height: 30vh;
+            max-width: 420px;
+
         }
     }
 
@@ -28,7 +30,7 @@
 
     .presentation__button{
         position: absolute;
-        top: clamp(31rem, 54vw, 35rem);
+        top: clamp(30rem, 55vw, 35rem);
     }
     .presentation {
         display: flex;

@@ -270,7 +270,8 @@ main {
   position: relative;
   z-index: 2;
   overflow-y: hidden;
-  height: 20vw;
+  max-height: 40rem;
+  height: 30vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,16 +305,15 @@ main {
   cursor: pointer;
   height: 15vw;
   opacity: 1;
-  max-height: 265px;
-  min-height: 243px;
-  min-width: 395px;
-  max-width: 420px;
+  max-width: 470px;
+  min-height: 270px;
+  min-width: 420px;
   border-radius: 5px;
   -webkit-transition: 450ms;
   transition: 450ms;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 25vw;
+  width: 40vw;
   margin-right: 0;
   -webkit-transform-origin: center center;
           transform-origin: center center;
@@ -394,10 +394,11 @@ main {
     min-height: 30rem;
   }
   .carousel .container__item {
-    min-height: 170px;
+    min-height: 200px;
     min-width: 250px;
-    width: 70vw;
+    width: 55vw;
     height: 30vh;
+    max-width: 420px;
   }
   .container__item:hover, .container__item:active {
     -webkit-transform: scale(1.1);
@@ -410,7 +411,7 @@ main {
   }
   .presentation__button {
     position: absolute;
-    top: clamp(31rem, 54vw, 35rem);
+    top: clamp(30rem, 55vw, 35rem);
   }
   .presentation {
     display: -ms-flexbox;
