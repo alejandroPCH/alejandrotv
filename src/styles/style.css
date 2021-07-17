@@ -227,6 +227,9 @@ main {
   display: none;
   -webkit-animation: image-appear 1s ease-in-out;
           animation: image-appear 1s ease-in-out;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .movie.render {
