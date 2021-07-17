@@ -2,16 +2,17 @@
     
     .carousel{
         top: 30vh;
+        margin-top: 15vw;
+        min-height: 30rem;
         &__container{
 
-            margin-bottom: 30rem;
-            margin-top: 7rem;
+                margin-top: 5vw;
          }
 
         .container__item{
             min-height: 170px;
             min-width: 250px;
-            width: 50vw;
+            width: 70vw;
             height: 30vh;
             margin-top: 5vh;
         }

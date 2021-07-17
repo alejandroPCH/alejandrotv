@@ -4,7 +4,8 @@ const presentationTextIntro:HTMLElement=document.querySelector(".presentation__i
 
 
 function removeMainImage():void {
-    main_image.classList.add("remove")
+  setTimeout(()=>{main_image.style.visibility='hidden' } ,1000,  main_image.classList.add("remove"))
+  
   
   }
   

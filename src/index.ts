@@ -35,7 +35,8 @@ function show_item(){
   video.classList.add('render')
 }
 
-console.log("now with button ")
+
+
 export function presentation__container__appear(firstTime=false){
    if(firstTime){presentationContainer.style.display = 'block'}
 
@@ -52,7 +53,7 @@ function remove_item(){
   document.querySelector(".container__item").classList.remove('display')
   
 }
-
+console.log("end")
 
 video.addEventListener('ended',()=>{
   
@@ -67,7 +68,7 @@ video.addEventListener('ended',()=>{
 setTimeout(()=>{ 
                 video.classList.remove('disappear')
                 video.classList.remove('render')
-              
+                main_image.style.visibility='visible'
               
               },1000,
                 video.classList.add('disappear'),

@@ -1,6 +1,7 @@
 .presentation__button{
     display: none;
     position: absolute;
+    z-index: 3;
     height: fit-content;
     background-color: white;
     border-radius: 5px;

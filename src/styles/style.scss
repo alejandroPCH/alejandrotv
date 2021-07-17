@@ -11,7 +11,7 @@
     height: 40vh;
     line-height: clamp(1.9rem,5vw,3rem);
     font-size: clamp(1.7rem, 1.5vw, 2rem);
-
+    z-index: 2;
     
 
     &__intro{
@@ -142,7 +142,7 @@
     height:42vw;
     min-height: 540px;
     animation: image-appear 1s ease-in-out;
-    z-index: 2;
+    z-index: 1;
     display: block;
 }
 
@@ -175,7 +175,7 @@
         min-width: fit-content;
         display: flex;
         justify-content: center;
-
+        z-index: 2;
     
 
 .container__item{
