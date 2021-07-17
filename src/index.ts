@@ -11,8 +11,7 @@ export const presentationContainer:HTMLElement=document.querySelector(".presenta
 export const playOrPause=buttonPlayOrPause.classList;
 export const video=document.querySelector('video')
 export let firstTimeVideoRender:Boolean=false;
-const presentationText:HTMLElement=document.querySelector(".presentation__container--text")
-const presentationImage=document.querySelector(".presentation__container--image")
+
 
 
 

@@ -1,15 +1,27 @@
-{
-    "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "sourceMap": true,
-      "outDir":"out",
-      "allowJs": true
-
+{    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "newLine": "LF",
+        "outDir": "out",
+        "target": "es5",
+        "sourceMap": true,
+        "declaration": true,
+        "jsx": "preserve",
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true
     },
     "exclude": [
       ".git",
       "node_modules",
       ".gitignore"
   ]
+
+
+  
   }
