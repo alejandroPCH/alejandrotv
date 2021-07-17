@@ -53,7 +53,7 @@ function remove_item(){
   document.querySelector(".container__item").classList.remove('display')
   
 }
-console.log("end")
+console.log("again2")
 
 video.addEventListener('ended',()=>{
   
@@ -68,11 +68,13 @@ video.addEventListener('ended',()=>{
 setTimeout(()=>{ 
                 video.classList.remove('disappear')
                 video.classList.remove('render')
-                main_image.style.visibility='visible'
+                
+             
               
               },1000,
                 video.classList.add('disappear'),
-                main_image.classList.remove('remove')
+                main_image.classList.remove('remove'),
+                main_image.style.visibility='visible'
 
                 )
 
