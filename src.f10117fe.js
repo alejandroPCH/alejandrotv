@@ -210,7 +210,7 @@ var autoPause =
 function () {
   function autoPause(title) {
     this.pauseByVisibility = false;
-    this.threshold = 0.30;
+    this.threshold = 0.10;
     this.handlerIntersection = this.handlerIntersection.bind(this);
     this.handleVisibility = this.handleVisibility.bind(this);
     this.title = title;
@@ -382,8 +382,6 @@ exports.presentationContainer = document.querySelector(".presentation__container
 exports.playOrPause = exports.buttonPlayOrPause.classList;
 exports.video = document.querySelector('video');
 exports.firstTimeVideoRender = false;
-var presentationText = document.querySelector(".presentation__container--text");
-var presentationImage = document.querySelector(".presentation__container--image");
 var title = document.getElementsByTagName("title");
 exports.item.addEventListener('mouseover', growItem_1.default);
 exports.item.addEventListener('mouseout', remove_item);
@@ -474,7 +472,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39737" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44723" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
