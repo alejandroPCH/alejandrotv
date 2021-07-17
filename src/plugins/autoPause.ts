@@ -11,7 +11,7 @@ class autoPause{
 
     constructor(title: HTMLTitleElement){
 
-        this.threshold = 0.10
+        this.threshold = 0.15
         this.handlerIntersection = this.handlerIntersection.bind(this)
         this.handleVisibility = this.handleVisibility.bind(this)
         this.title=title

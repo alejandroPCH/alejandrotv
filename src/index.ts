@@ -12,6 +12,8 @@ export const playOrPause=buttonPlayOrPause.classList;
 export const video=document.querySelector('video')
 export let firstTimeVideoRender:Boolean=false;
 
+const header:HTMLElement=document.querySelector('header')
+
 
 
 
@@ -20,10 +22,12 @@ export let firstTimeVideoRender:Boolean=false;
 const title:any=document.getElementsByTagName("title");
 
 
+
 item.addEventListener('mouseover',grow_item)
 item.addEventListener('mouseout',remove_item)
 item.addEventListener('click', show_item)
 
+header.addEventListener('click',grow_item)
 
 
 function show_item(){
@@ -31,7 +35,7 @@ function show_item(){
   video.classList.add('render')
 }
 
-
+console.log("now with button ")
 export function presentation__container__appear(firstTime=false){
    if(firstTime){presentationContainer.style.display = 'block'}
 
@@ -90,18 +94,24 @@ setTimeout(()=>{
 button.onclick=()=>{
 
 
-
   show_item();
-
 
   iconsManager()
   player.media.muted ? player.muteControl() : player.control();
 
 
+}
+
+video.onclick=()=>{
+
+
+  show_item();
+
+  iconsManager()
+  player.media.muted ? player.muteControl() : player.control();
 
 
 }
-
 
 // if the navigator uses "Service Worker" then it will use it
 if('serviceWorker' in navigator){
