@@ -5,14 +5,13 @@
 
 .presentation{
     display: flex;
-    width: 100%;
     min-height: 360px;
     align-items: flex-end;
     height: 40vh;
     line-height: clamp(1.9rem,5vw,3rem);
     font-size: clamp(1.7rem, 1.5vw, 2rem);
     z-index: 2;
-    
+    padding-left: 5vw;
 
     &__intro{
         position: relative;
@@ -71,7 +70,7 @@
 
 .header__nav{
     z-index: 1;
-
+    padding-left: 5vw;
     align-items: center;
     width: 100%;
     display: flex;
