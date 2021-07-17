@@ -164,7 +164,6 @@ function () {
   };
 
   MediaPlayer.prototype.control = function () {
-    console.log(this.media.muted);
     if (this.media.muted == false) this.media.paused ? this.play() : this.pause();
   };
 
@@ -282,16 +281,12 @@ var index_1 = require("../index");
 
 var presentationTextIntro = document.querySelector(".presentation__intro--text");
 
-function removeMainImage() {
-  index_1.main_image.classList.add("remove");
-}
-
 function grow_item(e) {
   var gradient = 'linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(255,255,255,0) 100%)';
   if (index_1.video.classList.contains('render')) return;
   if (index_1.main_image.style.backgroundImage) return;
 
-  if (e.target.classList.contains("presentation")) {
+  if (e.target.classList.contains("presentation") || e.target.classList.contains("main_image")) {
     index_1.main_image.style.backgroundImage = gradient + ", url(" + window.getComputedStyle(document.querySelector(".container__item")).backgroundImage.slice(4, -1).replace(/"/g, "") + ")";
   } else {
     index_1.item.classList.add('display'); //this will render once
@@ -309,7 +304,7 @@ function grow_item(e) {
   index_1.button.classList.add("displayButton");
   setTimeout(function () {
     index_1.video.classList.add('render');
-    removeMainImage();
+    index_1.removeMainImage();
   }, 3000);
   presentationTextIntro.style.display = 'none';
   index_1.presentation__container__appear(true);
@@ -328,20 +323,30 @@ var index_1 = require("../index");
 var presentationButtonIcon = document.querySelector('.presentation__button--icon.State');
 
 function presentation__container__disappear() {
+  //this just is going to render the animation in the right time
   if (index_1.presentationContainer.classList.contains('disappear') != true || index_1.presentationContainer.style.display != 'none') {
     setTimeout(function () {
       index_1.presentationContainer.style.display = 'none';
-    }, 500, index_1.presentationContainer.classList.add('disappear'));
+    }, 500,
+    /*this will excute instantly when -> */
+    index_1.presentationContainer.classList.add('disappear'));
   }
 }
 
 function iconsManager() {
+  //this will just run once 
   if (index_1.video.classList.contains('render') && index_1.player.media.muted === true) {
     presentation__container__disappear();
+    index_1.removeMainImage();
     presentationButtonIcon.classList.remove('Mute');
     presentationButtonIcon.classList.add('unMute');
     index_1.playOrPause.remove('Play');
     index_1.playOrPause.add('Pause');
+    return;
+  }
+
+  if (index_1.player.media.muted === true) {
+    presentationButtonIcon.classList.add('Mute');
     return;
   }
 
@@ -369,7 +374,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.player = exports.presentation__container__appear = exports.firstTimeVideoRender = exports.video = exports.playOrPause = exports.presentationContainer = exports.button = exports.main_image = exports.item = exports.buttonPlayOrPause = void 0;
+exports.player = exports.presentation__container__appear = exports.removeMainImage = exports.firstTimeVideoRender = exports.video = exports.playOrPause = exports.presentationContainer = exports.button = exports.main_image = exports.item = exports.buttonPlayOrPause = void 0;
 
 var mediaplayer_1 = __importDefault(require("./mediaplayer"));
 
@@ -389,18 +394,20 @@ exports.presentationContainer = document.querySelector(".presentation__container
 exports.playOrPause = exports.buttonPlayOrPause.classList;
 exports.video = document.querySelector('video');
 exports.firstTimeVideoRender = false;
-var header = document.querySelector('header');
+var presentationButtonIcon = document.querySelector('.presentation__button--icon.State');
 var title = document.getElementsByTagName("title");
 exports.item.addEventListener('mouseover', growItem_1.default);
-exports.item.addEventListener('mouseout', remove_item);
+exports.item.addEventListener('mouseout', reduce_item);
 exports.item.addEventListener('click', show_item);
-header.addEventListener('click', growItem_1.default);
+exports.main_image.addEventListener('click', growItem_1.default);
 
-function show_item() {
-  exports.video.classList.add('render');
+function removeMainImage() {
+  setTimeout(function () {
+    exports.main_image.style.visibility = 'hidden';
+  }, 1000, exports.main_image.classList.add("remove"));
 }
 
-console.log("now with button ");
+exports.removeMainImage = removeMainImage;
 
 function presentation__container__appear(firstTime) {
   if (firstTime === void 0) {
@@ -420,9 +427,24 @@ function presentation__container__appear(firstTime) {
 
 exports.presentation__container__appear = presentation__container__appear;
 
-function remove_item() {
+function show_item() {
+  exports.video.classList.add('render');
+
+  if (exports.main_image.classList.contains('remove') == false) {
+    removeMainImage();
+
+    if (exports.player.media.muted === true) {
+      presentationButtonIcon.classList.add('Mute');
+      return;
+    }
+  }
+} // make the element selected smaller
+
+
+function reduce_item() {
   document.querySelector(".container__item").classList.remove('display');
-}
+} //when video ends
+
 
 exports.video.addEventListener('ended', function () {
   exports.player.media.muted = true;
@@ -432,7 +454,7 @@ exports.video.addEventListener('ended', function () {
   setTimeout(function () {
     exports.video.classList.remove('disappear');
     exports.video.classList.remove('render');
-  }, 1000, exports.video.classList.add('disappear'), exports.main_image.classList.remove('remove'));
+  }, 1000, exports.video.classList.add('disappear'), exports.main_image.classList.remove('remove'), exports.main_image.style.visibility = 'visible');
 }); //el:video contains the original video
 
 exports.player = new mediaplayer_1.default({
@@ -489,7 +511,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39291" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42027" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
